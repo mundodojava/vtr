@@ -21,29 +21,43 @@ import br.com.javatar.votenorestaurante.model.ranking.Ranking;
 import br.com.javatar.votenorestaurante.model.ranking.TipoVoto;
 import br.com.javatar.votenorestaurante.model.ranking.Voto;
 import br.com.javatar.votenorestaurante.model.restaurante.Restaurante;
-import br.com.javatar.votenorestaurante.persist.repository.pessoa.UsuarioRepository;
 import br.com.javatar.votenorestaurante.persist.repository.ranking.RankingRepository;
-import br.com.javatar.votenorestaurante.persist.repository.restaurante.RestauranteRepository;
+import br.com.javatar.votenorestaurante.service.pessoa.UsuarioService;
+import br.com.javatar.votenorestaurante.service.restaurante.RestauranteService;
 
 import com.google.common.base.Preconditions;
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
 
+/**
+ * The Class RankingService.
+ * 
+ * @author ismael
+ */
 @Service
 public class RankingService {
 
+    /** O(a)(s) ranking repository. */
     @Autowired
     private RankingRepository rankingRepository;
 
+    /** O(a)(s) usuario service. */
     @Autowired
-    private UsuarioRepository usuarioRepository;
+    private UsuarioService usuarioService;
 
+    /** O(a)(s) restaurante service. */
     @Autowired
-    private RestauranteRepository restauranteRepository;
+    private RestauranteService restauranteService;
 
+    /** O(a)(s) message source. */
     @Autowired
     private ResourceBundleMessageSource messageSource;
 
+    /**
+     * Salvar.
+     *
+     * @param ranking O(a)(s) ranking
+     */
     @Transactional(propagation = Propagation.REQUIRED, rollbackFor = Exception.class)
     public void salvar(Ranking ranking) {
         validarRanking(ranking);
@@ -52,6 +66,11 @@ public class RankingService {
         rankingRepository.save(ranking);
     }
 
+    /**
+     * Merge restaurante.
+     *
+     * @param ranking O(a)(s) ranking
+     */
     public void mergeRestaurante(Ranking ranking) {
         Preconditions.checkNotNull(ranking, "ranking nulo");
         Map<Long, Restaurante> restaurantes = new HashMap<>();
@@ -61,7 +80,7 @@ public class RankingService {
                 voto.setRestaurante(restaurantes.get(restauranteId));
                 break;
             }
-            Restaurante restaurante = restauranteRepository.findOne(restauranteId);
+            Restaurante restaurante = restauranteService.buscar(restauranteId);
             if (restaurante == null) {
                 throw new EmptyResultDataAccessException(messageSource.getMessage("restaurante_nao_encontrado", null, new Locale("pt_BR")), 1);
             }
@@ -70,17 +89,28 @@ public class RankingService {
         }
     }
 
+    /**
+     * Validar ranking.
+     *
+     * @param ranking O(a)(s) ranking
+     */
     public void validarRanking(Ranking ranking) {
         Map<String, String> map = new HashMap<String, String>();
         if (ranking.getUsuario().isNew()) {
             map.put("usuarioId", messageSource.getMessage("email_obrigatorio", null, new Locale("pt_BR")));
-        } else if (usuarioRepository.exists(ranking.getUsuario().getId()) && ranking.getUsuario().getPessoa() != null) {
+        } else if (usuarioService.exists(ranking.getUsuario().getId()) && ranking.getUsuario().getPessoa() != null) {
             map.put("usuarioId", messageSource.getMessage("pessoa_existente", new Object[] { ranking.getUsuario().getPessoa().getNome() }, new Locale("pt_BR")));
         }
         validarRestauranteVoto(ranking.getVotos(), map);
         checkViolations(map, validate(ranking));
     }
 
+    /**
+     * Validar restaurante voto.
+     *
+     * @param votos O(a)(s) votos
+     * @param map O(a)(s) map
+     */
     public void validarRestauranteVoto(Set<Voto> votos, Map<String, String> map) {
         for (Voto voto : votos) {
             if (voto.getRestaurante() != null && voto.getRestaurante().isNew()) {
@@ -89,6 +119,11 @@ public class RankingService {
         }
     }
 
+    /**
+     * Validar votacao por restaurante.
+     *
+     * @param votos O(a)(s) votos
+     */
     public void validarVotacaoPorRestaurante(Set<Voto> votos) {
         Map<String, String> map = new HashMap<>();
         Multimap<Restaurante, TipoVoto> votosPorRestaurante = HashMultimap.create();

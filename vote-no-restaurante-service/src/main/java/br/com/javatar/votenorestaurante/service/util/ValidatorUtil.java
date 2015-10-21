@@ -18,8 +18,14 @@ import br.com.javatar.votenorestaurante.service.exception.BusinessException;
 
 import com.google.common.base.Preconditions;
 
+/**
+ * The Class ValidatorUtil.
+ * 
+ * Usuario
+ */
 public final class ValidatorUtil {
 
+    /** A Constante VALIDATOR. */
     private static final Validator VALIDATOR = Validation.byProvider(HibernateValidator.class).configure().buildValidatorFactory().getValidator();
 
     /**
@@ -31,12 +37,9 @@ public final class ValidatorUtil {
     /**
      * Validates all constraints on <code>object</code>.
      *
-     * @param <T>
-     *            O tipo genérico
-     * @param objetc
-     *            O(a)(s) objetc
-     * @param groups
-     *            group or list of groups targeted for validation (default to {@link javax.validation.groups.Default})
+     * @param <T> O tipo genérico
+     * @param objetc O(a)(s) objetc
+     * @param groups group or list of groups targeted for validation (default to {@link javax.validation.groups.Default})
      */
     public static <T> void checkBeanViolations(final T objetc, Class<?>... groups) {
         Violations<T> violations = validate(objetc, groups);
@@ -48,12 +51,9 @@ public final class ValidatorUtil {
     /**
      * Validate.
      *
-     * @param <T>
-     *            O tipo genérico
-     * @param objetc
-     *            O(a)(s) objetc
-     * @param groups
-     *            O(a)(s) groups
+     * @param <T> O tipo genérico
+     * @param objetc O(a)(s) objetc
+     * @param groups O(a)(s) groups
      * @return O(a)(s) violations
      */
     public static <T> Violations<T> validate(final T objetc, Class<?>... groups) {
@@ -63,12 +63,9 @@ public final class ValidatorUtil {
     /**
      * Validates all constraints on <code>object</code>.
      *
-     * @param <T>
-     *            O tipo genérico
-     * @param object
-     *            object to validate
-     * @param groups
-     *            group or list of groups targeted for validation (default to {@link javax.validation.groups.Default})
+     * @param <T> O tipo genérico
+     * @param object object to validate
+     * @param groups group or list of groups targeted for validation (default to {@link javax.validation.groups.Default})
      * @return constraint violations or an empty Set if none
      */
     public static <T> Set<ConstraintViolation<T>> constraintViolations(T object, Class<?>... groups) {
@@ -79,14 +76,10 @@ public final class ValidatorUtil {
     /**
      * Validates all constraints placed on the property of <code>object</code> named <code>propertyName</code>.
      *
-     * @param <T>
-     *            O tipo genérico
-     * @param object
-     *            object to validate
-     * @param propertyName
-     *            property to validate (ie field and getter constraints)
-     * @param groups
-     *            group or list of groups targeted for validation (default to {@link javax.validation.groups.Default})
+     * @param <T> O tipo genérico
+     * @param object object to validate
+     * @param propertyName property to validate (ie field and getter constraints)
+     * @param groups group or list of groups targeted for validation (default to {@link javax.validation.groups.Default})
      * @return constraint violations or an empty Set if none
      */
     public static <T> Set<ConstraintViolation<T>> validateProperty(final T object, final String propertyName, final Class<?>... groups) {
@@ -98,16 +91,11 @@ public final class ValidatorUtil {
     /**
      * Validate value.
      *
-     * @param <T>
-     *            O tipo genérico
-     * @param beanType
-     *            O(a)(s) bean type
-     * @param propertyName
-     *            O(a)(s) property name
-     * @param value
-     *            O(a)(s) value
-     * @param groups
-     *            O(a)(s) groups
+     * @param <T> O tipo genérico
+     * @param beanType O(a)(s) bean type
+     * @param propertyName O(a)(s) property name
+     * @param value O(a)(s) value
+     * @param groups O(a)(s) groups
      * @return O(a)(s) sets the
      */
     public static <T> Set<ConstraintViolation<T>> validateValue(Class<T> beanType, String propertyName, Object value, Class<?>... groups) {
@@ -119,14 +107,10 @@ public final class ValidatorUtil {
     /**
      * Validates all constraints placed on the property of <code>object</code> named <code>propertyName</code>.
      *
-     * @param <T>
-     *            O tipo genérico
-     * @param object
-     *            object to validate
-     * @param propertyName
-     *            property to validate (ie field and getter constraints)
-     * @param groups
-     *            group or list of groups targeted for validation (default to {@link javax.validation.groups.Default})
+     * @param <T> O tipo genérico
+     * @param object object to validate
+     * @param propertyName property to validate (ie field and getter constraints)
+     * @param groups group or list of groups targeted for validation (default to {@link javax.validation.groups.Default})
      * @return violations
      */
     public static <T> Violations<T> constraintViolations(final T object, final String propertyName, final Class<?>... groups) {
@@ -136,21 +120,17 @@ public final class ValidatorUtil {
     /**
      * Validates all constraints placed on the property of <code>object</code> named <code>propertyName</code>.
      *
-     * @param <T>
-     *            O tipo genérico
-     * @param beanType
-     *            O(a)(s) bean type
-     * @param properties
-     *            O(a)(s) properties
-     * @param groups
-     *            group or list of groups targeted for validation (default to {@link javax.validation.groups.Default})
+     * @param <T> O tipo genérico
+     * @param beanType O(a)(s) bean type
+     * @param properties O(a)(s) properties
+     * @param groups group or list of groups targeted for validation (default to {@link javax.validation.groups.Default})
      * @return violations
      */
     public static <T> Violations<T> constraintViolations(Class<T> beanType, Map<String, Object> properties, Class<?>... groups) {
         Preconditions.checkArgument(beanType != null);
         Preconditions.checkArgument(properties != null);
         Set<ConstraintViolation<T>> violations = new HashSet<>();
-        for (Entry<String, Object> propertie : properties.entrySet()) {
+        for(Entry<String, Object> propertie : properties.entrySet()) {
             violations.addAll(validateValue(beanType, propertie.getKey(), propertie.getValue(), groups));
         }
         return new Violations<T>(violations);
@@ -159,22 +139,19 @@ public final class ValidatorUtil {
     /**
      * Check bean violations.
      *
-     * @param <T>
-     *            O tipo genérico
-     * @param errorMsgs
-     *            O(a)(s) error msgs
-     * @param objetc
-     *            O(a)(s) objetc
-     * @param groups
-     *            O(a)(s) groups
-     * @throws BusinessException
-     *             se violations ou errorMsgs for diferente de vazio
+     * @param <T> O tipo genérico
+     * @param violations O(a)(s) violations
      */
     public static <T> void checkViolations(final Violations<T> violations) {
         checkViolations(new HashMap<String, String>(), violations);
     }
-    
-    
+
+    /**
+     * Check violations.
+     *
+     * @param <T> O tipo genérico
+     * @param errorMsgs O(a)(s) error msgs
+     */
     public static <T> void checkViolations(final Map<String, String> errorMsgs) {
         checkViolations(errorMsgs, new Violations<T>(new HashSet<ConstraintViolation<T>>()));
     }
@@ -182,25 +159,18 @@ public final class ValidatorUtil {
     /**
      * Check bean violations.
      *
-     * @param <T>
-     *            O tipo genérico
-     * @param errorMsgs
-     *            O(a)(s) error msgs
-     * @param objetc
-     *            O(a)(s) objetc
-     * @param groups
-     *            O(a)(s) groups
-     * @throws BusinessException
-     *             se violations ou errorMsgs for diferente de vazio
+     * @param <T> O tipo genérico
+     * @param errorMsgs O(a)(s) error msgs
+     * @param violations O(a)(s) violations
      */
-    public static <T>  void checkViolations(final Map<String, String> errorMsgs, final Violations<T> violations) {
+    public static <T> void checkViolations(final Map<String, String> errorMsgs, final Violations<T> violations) {
         Map<String, String> mapaErrorMsgs = new HashMap<String, String>();
         if (errorMsgs != null && !errorMsgs.isEmpty()) {
             mapaErrorMsgs.putAll(errorMsgs);
         }
 
         if (violations != null && violations.hasViolations()) {
-            for (ConstraintViolation<?> violation : violations.constraintViolations()) {
+            for(ConstraintViolation<?> violation : violations.constraintViolations()) {
                 try {
                     mapaErrorMsgs.put(violation.getPropertyPath().toString(), violation.getMessage());
                 } catch (NoSuchMessageException e) {

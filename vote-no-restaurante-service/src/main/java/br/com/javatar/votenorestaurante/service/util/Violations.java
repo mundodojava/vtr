@@ -12,6 +12,13 @@ import javax.validation.ConstraintViolation;
 
 import com.google.common.base.Strings;
 
+/**
+ * The Class Violations.
+ * 
+ * @author ismael
+ *
+ * @param <T> O tipo genérico
+ */
 public final class Violations<T> {
 
     /** O(a)(s) violations. */
@@ -20,8 +27,7 @@ public final class Violations<T> {
     /**
      * Instancia um novo(a) violations.
      *
-     * @param violations
-     *            O(a)(s) violations
+     * @param violations O(a)(s) violations
      */
     @SuppressWarnings("unchecked")
     public Violations(Set<ConstraintViolation<T>> violations) {
@@ -58,8 +64,7 @@ public final class Violations<T> {
     /**
      * Contains unique message.
      * 
-     * @param expectedMessage
-     *            the expected message
+     * @param expectedMessage the expected message
      * @return true, if successful
      */
     public boolean containsUniqueMessage(String expectedMessage) {
@@ -70,7 +75,7 @@ public final class Violations<T> {
 
         boolean retorno = false;
 
-        for (ConstraintViolation<?> constraintViolation : violations) {
+        for(ConstraintViolation<?> constraintViolation : violations) {
             if (expectedMessage.equals(constraintViolation.getMessage())) {
                 retorno = true;
                 break;
@@ -87,7 +92,7 @@ public final class Violations<T> {
     public List<String> listViolations() {
 
         List<String> errorList = new ArrayList<>();
-        for (ConstraintViolation<?> violation : violations) {
+        for(ConstraintViolation<?> violation : violations) {
             errorList.add(violation.getMessage());
         }
         return errorList;
@@ -110,7 +115,7 @@ public final class Violations<T> {
     public List<String> listPropertyPathAndViolations() {
 
         List<String> errorList = new ArrayList<>();
-        for (ConstraintViolation<?> violation : violations) {
+        for(ConstraintViolation<?> violation : violations) {
             StringBuilder message = new StringBuilder();
 
             message.append(violation.getPropertyPath());
