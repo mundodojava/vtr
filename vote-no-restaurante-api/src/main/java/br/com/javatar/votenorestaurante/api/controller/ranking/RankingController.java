@@ -19,13 +19,9 @@ import br.com.javatar.votenorestaurante.api.assembler.ranking.ViewRankingToViewR
 import br.com.javatar.votenorestaurante.api.exception.BadRequestException;
 import br.com.javatar.votenorestaurante.dto.ranking.RankingDTO;
 import br.com.javatar.votenorestaurante.dto.ranking.ViewRankingDTO;
-import br.com.javatar.votenorestaurante.model.ranking.RankingAtendimento;
-import br.com.javatar.votenorestaurante.model.ranking.RankingCustoBeneficio;
-import br.com.javatar.votenorestaurante.model.ranking.RankingCustoBeneficioUsuario;
-import br.com.javatar.votenorestaurante.model.ranking.RankingDemora;
-import br.com.javatar.votenorestaurante.model.ranking.RankingLocalizacao;
-import br.com.javatar.votenorestaurante.model.ranking.RankingPreco;
-import br.com.javatar.votenorestaurante.model.ranking.RankingSabor;
+import br.com.javatar.votenorestaurante.model.ranking.RankingGeralCustoBeneficio;
+import br.com.javatar.votenorestaurante.model.ranking.RankingUsuarioCustoBeneficio;
+import br.com.javatar.votenorestaurante.model.ranking.RankingGeral;
 import br.com.javatar.votenorestaurante.model.ranking.RankingUsuario;
 import br.com.javatar.votenorestaurante.model.ranking.TipoVoto;
 import br.com.javatar.votenorestaurante.service.ranking.RankingService;
@@ -76,58 +72,11 @@ public class RankingController {
      *
      * @return O(a)(s) response entity
      */
-    @RequestMapping(value = "/sabor", method = RequestMethod.GET, produces = { MediaType.APPLICATION_JSON_VALUE })
+    @RequestMapping(value = "/{tipoVoto}", method = RequestMethod.GET, produces = { MediaType.APPLICATION_JSON_VALUE })
     @ResponseBody
-    public ResponseEntity<List<ViewRankingDTO>> viewRankingSabor() {
-        List<RankingSabor> view = viewRankingService.viewRankingSabor();
-        return new ResponseEntity<List<ViewRankingDTO>>(Lists.transform(view, viewRankingToViewRankingDTOFunction), HttpStatus.OK);
-    }
-
-    /**
-     * View ranking localizacao.
-     *
-     * @return O(a)(s) response entity
-     */
-    @RequestMapping(value = "/localizacao", method = RequestMethod.GET, produces = { MediaType.APPLICATION_JSON_VALUE })
-    @ResponseBody
-    public ResponseEntity<List<ViewRankingDTO>> viewRankingLocalizacao() {
-        List<RankingLocalizacao> view = viewRankingService.viewRankingLocalizacao();
-        return new ResponseEntity<List<ViewRankingDTO>>(Lists.transform(view, viewRankingToViewRankingDTOFunction), HttpStatus.OK);
-    }
-
-    /**
-     * View ranking demora.
-     *
-     * @return O(a)(s) response entity
-     */
-    @RequestMapping(value = "/demora", method = RequestMethod.GET, produces = { MediaType.APPLICATION_JSON_VALUE })
-    @ResponseBody
-    public ResponseEntity<List<ViewRankingDTO>> viewRankingDemora() {
-        List<RankingDemora> view = viewRankingService.viewRankingDemora();
-        return new ResponseEntity<List<ViewRankingDTO>>(Lists.transform(view, viewRankingToViewRankingDTOFunction), HttpStatus.OK);
-    }
-
-    /**
-     * View ranking preco.
-     *
-     * @return O(a)(s) response entity
-     */
-    @RequestMapping(value = "/preco", method = RequestMethod.GET, produces = { MediaType.APPLICATION_JSON_VALUE })
-    @ResponseBody
-    public ResponseEntity<List<ViewRankingDTO>> viewRankingPreco() {
-        List<RankingPreco> view = viewRankingService.viewRankingPreco();
-        return new ResponseEntity<List<ViewRankingDTO>>(Lists.transform(view, viewRankingToViewRankingDTOFunction), HttpStatus.OK);
-    }
-
-    /**
-     * View ranking ranking atendimento.
-     *
-     * @return O(a)(s) response entity
-     */
-    @RequestMapping(value = "/atendimento", method = RequestMethod.GET, produces = { MediaType.APPLICATION_JSON_VALUE })
-    @ResponseBody
-    public ResponseEntity<List<ViewRankingDTO>> viewRankingRankingAtendimento() {
-        List<RankingAtendimento> view = viewRankingService.viewRankingRankingAtendimento();
+    public ResponseEntity<List<ViewRankingDTO>> viewRankingGeralPorTipo(@PathVariable("tipoVoto") String tipoVoto) {
+        TipoVoto tipo = obterTipoVoto(tipoVoto);
+        List<RankingGeral> view = viewRankingService.viewRankingGeralPorTipo(tipo);
         return new ResponseEntity<List<ViewRankingDTO>>(Lists.transform(view, viewRankingToViewRankingDTOFunction), HttpStatus.OK);
     }
 
@@ -139,7 +88,7 @@ public class RankingController {
     @RequestMapping(value = "/custobeneficio", method = RequestMethod.GET, produces = { MediaType.APPLICATION_JSON_VALUE })
     @ResponseBody
     public ResponseEntity<List<ViewRankingDTO>> viewRankingCustoBeneficio() {
-        List<RankingCustoBeneficio> view = viewRankingService.viewRankingCustoBeneficio();
+        List<RankingGeralCustoBeneficio> view = viewRankingService.viewRankingCustoBeneficio();
         return new ResponseEntity<List<ViewRankingDTO>>(Lists.transform(view, viewRankingToViewRankingDTOFunction), HttpStatus.OK);
     }
 
@@ -169,7 +118,7 @@ public class RankingController {
     @ResponseBody
     public ResponseEntity<List<ViewRankingDTO>> viewRankingCustoBeneficioUsuario(@RequestParam("email") String email) {
         validarEmail(email);
-        List<RankingCustoBeneficioUsuario> view = viewRankingService.viewRankingCustoBeneficioUsuario(email);
+        List<RankingUsuarioCustoBeneficio> view = viewRankingService.viewRankingCustoBeneficioUsuario(email);
         return new ResponseEntity<List<ViewRankingDTO>>(Lists.transform(view, viewRankingToViewRankingDTOFunction), HttpStatus.OK);
     }
 

@@ -5,15 +5,16 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 import br.com.javatar.votenorestaurante.model.base.AbstractPersistableNoGenerator;
+import br.com.javatar.votenorestaurante.model.pessoa.Usuario;
 import br.com.javatar.votenorestaurante.model.restaurante.Restaurante;
 
 /**
- * The Class RankingCustoBeneficio.
+ * The Class RankingCustoBeneficioUsuario.
  * 
  * @author ismael
  */
 @Entity
-public class RankingCustoBeneficio extends AbstractPersistableNoGenerator<String> implements ViewRanking {
+public class RankingUsuarioCustoBeneficio extends AbstractPersistableNoGenerator<String> implements ViewRanking {
 
     /** A Constante serialVersionUID. */
     private static final long serialVersionUID = 1L;
@@ -25,6 +26,11 @@ public class RankingCustoBeneficio extends AbstractPersistableNoGenerator<String
     @ManyToOne
     @JoinColumn(columnDefinition = "restaurante_id", name = "restaurante_id")
     private Restaurante restaurante;
+
+    /** O(a)(s) usuario. */
+    @ManyToOne
+    @JoinColumn(columnDefinition = "usuario_id", name = "usuario_id")
+    private Usuario usuario;
 
     /*
      * (non-Javadoc)

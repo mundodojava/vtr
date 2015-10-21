@@ -1,8 +1,6 @@
 package br.com.javatar.votenorestaurante.model.ranking;
 
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
@@ -10,19 +8,15 @@ import br.com.javatar.votenorestaurante.model.base.AbstractPersistableNoGenerato
 import br.com.javatar.votenorestaurante.model.restaurante.Restaurante;
 
 /**
- * The Class RankingPreco.
+ * The Class RankingCustoBeneficio.
  * 
  * @author ismael
  */
 @Entity
-public class RankingPreco extends AbstractPersistableNoGenerator<String> implements ViewRanking {
+public class RankingGeralCustoBeneficio extends AbstractPersistableNoGenerator<String> implements ViewRanking {
 
     /** A Constante serialVersionUID. */
     private static final long serialVersionUID = 1L;
-
-    /** O(a)(s) tipo voto. */
-    @Enumerated(EnumType.STRING)
-    private TipoVoto tipoVoto;
 
     /** O(a)(s) media. */
     private Integer media;
@@ -39,7 +33,7 @@ public class RankingPreco extends AbstractPersistableNoGenerator<String> impleme
      */
     @Override
     public TipoVoto getTipoVoto() {
-        return tipoVoto;
+        return null;
     }
 
     /*
@@ -47,8 +41,9 @@ public class RankingPreco extends AbstractPersistableNoGenerator<String> impleme
      * 
      * @see br.com.javatar.votenorestaurante.model.ranking.ViewRanking#setTipoVoto(br.com.javatar.votenorestaurante.model.ranking.TipoVoto)
      */
+    @Override
     public void setTipoVoto(TipoVoto tipoVoto) {
-        this.tipoVoto = tipoVoto;
+        // Não implementar
     }
 
     /*
@@ -66,6 +61,7 @@ public class RankingPreco extends AbstractPersistableNoGenerator<String> impleme
      * 
      * @see br.com.javatar.votenorestaurante.model.ranking.ViewRanking#setMedia(java.lang.Integer)
      */
+    @Override
     public void setMedia(Integer media) {
         this.media = media;
     }
@@ -85,6 +81,7 @@ public class RankingPreco extends AbstractPersistableNoGenerator<String> impleme
      * 
      * @see br.com.javatar.votenorestaurante.model.ranking.ViewRanking#setRestaurante(br.com.javatar.votenorestaurante.model.restaurante.Restaurante)
      */
+    @Override
     public void setRestaurante(Restaurante restaurante) {
         this.restaurante = restaurante;
     }

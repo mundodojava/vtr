@@ -10,12 +10,12 @@ import br.com.javatar.votenorestaurante.model.base.AbstractPersistableNoGenerato
 import br.com.javatar.votenorestaurante.model.restaurante.Restaurante;
 
 /**
- * The Class RankingDemora.
+ * The Class RankingAtendimento.
  * 
  * @author ismael
  */
 @Entity
-public class RankingDemora extends AbstractPersistableNoGenerator<String> implements ViewRanking {
+public class RankingGeral extends AbstractPersistableNoGenerator<String> implements ViewRanking {
 
     /** A Constante serialVersionUID. */
     private static final long serialVersionUID = 1L;
@@ -82,10 +82,10 @@ public class RankingDemora extends AbstractPersistableNoGenerator<String> implem
         return restaurante;
     }
 
-    /**
-     * Define o valor do(a)(s) restaurante.
-     *
-     * @param restaurante the restaurante to set
+    /*
+     * (non-Javadoc)
+     * 
+     * @see br.com.javatar.votenorestaurante.model.ranking.ViewRanking#setRestaurante(br.com.javatar.votenorestaurante.model.restaurante.Restaurante)
      */
     @Override
     public void setRestaurante(Restaurante restaurante) {

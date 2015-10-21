@@ -7,14 +7,10 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 import br.com.javatar.votenorestaurante.model.ranking.Ranking;
-import br.com.javatar.votenorestaurante.model.ranking.RankingAtendimento;
-import br.com.javatar.votenorestaurante.model.ranking.RankingCustoBeneficio;
-import br.com.javatar.votenorestaurante.model.ranking.RankingCustoBeneficioUsuario;
-import br.com.javatar.votenorestaurante.model.ranking.RankingDemora;
-import br.com.javatar.votenorestaurante.model.ranking.RankingLocalizacao;
-import br.com.javatar.votenorestaurante.model.ranking.RankingPreco;
-import br.com.javatar.votenorestaurante.model.ranking.RankingSabor;
+import br.com.javatar.votenorestaurante.model.ranking.RankingGeral;
+import br.com.javatar.votenorestaurante.model.ranking.RankingGeralCustoBeneficio;
 import br.com.javatar.votenorestaurante.model.ranking.RankingUsuario;
+import br.com.javatar.votenorestaurante.model.ranking.RankingUsuarioCustoBeneficio;
 import br.com.javatar.votenorestaurante.model.ranking.TipoVoto;
 
 /**
@@ -25,52 +21,12 @@ import br.com.javatar.votenorestaurante.model.ranking.TipoVoto;
 public interface RankingRepository extends JpaRepository<Ranking, Long> {
 
     /**
-     * View ranking localizacao.
-     *
-     * @return O(a)(s) list
-     */
-    @Query(value = "SELECT r FROM RankingLocalizacao r ORDER BY r.media DESC")
-    List<RankingLocalizacao> viewRankingLocalizacao();
-
-    /**
-     * View ranking sabor.
-     *
-     * @return O(a)(s) list
-     */
-    @Query(value = "SELECT r FROM RankingSabor r ORDER BY r.media DESC")
-    List<RankingSabor> viewRankingSabor();
-
-    /**
-     * View ranking preco.
-     *
-     * @return O(a)(s) list
-     */
-    @Query(value = "SELECT r FROM RankingPreco r ORDER BY r.media DESC")
-    List<RankingPreco> viewRankingPreco();
-
-    /**
-     * View ranking demora.
-     *
-     * @return O(a)(s) list
-     */
-    @Query(value = "SELECT r FROM RankingDemora r ORDER BY r.media DESC")
-    List<RankingDemora> viewRankingDemora();
-
-    /**
-     * View ranking atendimento.
-     *
-     * @return O(a)(s) list
-     */
-    @Query(value = "SELECT r FROM RankingAtendimento r ORDER BY r.media DESC")
-    List<RankingAtendimento> viewRankingAtendimento();
-
-    /**
      * View ranking custo beneficio.
      *
      * @return O(a)(s) list
      */
-    @Query(value = "SELECT r FROM RankingCustoBeneficio r ORDER BY r.media DESC")
-    List<RankingCustoBeneficio> viewRankingCustoBeneficio();
+    @Query(value = "SELECT r FROM RankingGeralCustoBeneficio r ORDER BY r.media DESC")
+    List<RankingGeralCustoBeneficio> viewRankingGeralCustoBeneficio();
 
     /**
      * View por usuario e tipo.
@@ -88,7 +44,16 @@ public interface RankingRepository extends JpaRepository<Ranking, Long> {
      * @param usuarioId O(a)(s) usuario id
      * @return O(a)(s) list
      */
-    @Query(value = "SELECT r FROM RankingCustoBeneficioUsuario r WHERE r.usuario.id = :usuarioId ORDER BY r.media DESC")
-    List<RankingCustoBeneficioUsuario> viewRankingCustoBeneficioUsuario(@Param("usuarioId") String usuarioId);
+    @Query(value = "SELECT r FROM RankingUsuarioCustoBeneficio r WHERE r.usuario.id = :usuarioId ORDER BY r.media DESC")
+    List<RankingUsuarioCustoBeneficio> viewRankingUsuarioCustoBeneficio(@Param("usuarioId") String usuarioId);
+
+    /**
+     * View ranking geral por tipo.
+     *
+     * @param tipo O(a)(s) tipo
+     * @return O(a)(s) list
+     */
+    @Query(value = "SELECT r FROM RankingGeral r WHERE r.tipoVoto = :tipoVoto ORDER BY r.media DESC")
+    List<RankingGeral> viewRankingGeralPorTipo(@Param("tipoVoto") TipoVoto tipoVoto);
 
 }
