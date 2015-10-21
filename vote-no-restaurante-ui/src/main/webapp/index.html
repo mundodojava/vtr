@@ -1,0 +1,125 @@
+
+<!-- FlatFy Theme - Andrea Galanti /-->
+<!doctype html >
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if IE 9]>    <html class="no-js ie9" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html ng-app="voteNoRestaurante">
+<!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<meta name="fragment" content="!" />
+<meta name="viewport"
+	content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+<meta name="description"
+	content="Flatfy Free Flat and Responsive HTML5 Template ">
+<meta name="author" content="">
+
+<title>Vote no Restaurante</title>
+
+<!-- Bootstrap core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Custom Google Web Font -->
+<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
+<link
+	href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic'
+	rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Arvo:400,700'
+	rel='stylesheet' type='text/css'>
+
+<!-- Custom CSS-->
+<link href="css/general.css" rel="stylesheet">
+
+<!-- Owl-Carousel -->
+<link href="css/custom.css" rel="stylesheet">
+<link href="css/owl.carousel.css" rel="stylesheet">
+<link href="css/owl.theme.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<link href="css/animate.css" rel="stylesheet">
+<link href="css/angular-input-stars.css" rel="stylesheet">
+
+<!-- Magnific Popup core CSS file -->
+<link rel="stylesheet" href="css/magnific-popup.css">
+
+<!-- <script src="js/modernizr-2.6.2.min.js"></script>  -->
+<!-- Modernizr /-->
+</head>
+
+<body id="home">
+
+	<!-- Preloader -->
+	<!-- <div id="preloader">
+		<div id="status"></div>
+	</div> -->
+
+	<!-- FullScreen -->
+	<div class="intro-header">
+		<div class="col-xs-12 text-center abcen1">
+			<h1 class="h1_home wow fadeIn" data-wow-delay="0.4s"
+				style="text-shadow: 2px 2px 1px rgb(0, 0, 0); font-weight: bold;">Vote
+				no Restaurante</h1>
+			<h3 class="h3_home wow fadeIn" data-wow-delay="0.6s">Nós
+				queremos saber quem é o melhor</h3>
+			<ul class="list-inline intro-social-buttons">
+				<li><a href="#!/votacao"><h1 id="votarPrincipal"
+							class="btn btn-lg btn-primary wow fadeIn" data-wow-delay="0.8s"
+							style="font-size: 40px; padding-left: 50px; padding-right: 50px;">
+							<i class="fa fa-star"></i> Votar
+						</h1> </a></li>
+				<li id="download" ><a href="#!/home"><h1 class="btn btn-lg btn-info wow fadeIn"
+						data-wow-delay="1.2s"
+						style="font-size: 40px; padding-left: 50px; padding-right: 50px;">
+						<i class="fa fa-list-ol"></i> Ranking
+					</h1></a>
+					</li>
+			</ul>
+		</div>
+		<!-- /.container -->
+		<div class="col-xs-12 text-center abcen wow fadeIn">
+			<div class="button_down ">
+				<div class="imgcircle wow bounceInUp" data-wow-duration="1.5s"
+					onclick="down()" style="cursor:pointer;">
+					<img class="img_scroll" src="img/icon/circle.png" alt="">
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- NavBar-->
+	<nav class="navbar-default" role="navigation">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target=".navbar-ex1-collapse">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand">Vote no Restaurante</a>
+			</div>
+
+			<div
+				class="collapse navbar-collapse navbar-right navbar-ex1-collapse">
+				<ul class="nav navbar-nav">
+				</ul>
+			</div>
+
+		</div>
+	</nav>
+
+	<div ng-view style="padding-bottom: 70px;"></div>
+
+	<footer>
+		<div class="container">
+			<div class="row"></div>
+		</div>
+	</footer>
+
+	<script data-main="main" src="js/require.js"></script>
+
+</body>
+
+</html>

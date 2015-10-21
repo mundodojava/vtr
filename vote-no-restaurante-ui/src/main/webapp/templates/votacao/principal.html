@@ -1,0 +1,22 @@
+<div id="vote" class="content-section-a" style="background: white;"
+	ng-init="init()">
+	<div class="container">
+
+		<div ng-show="isSelected(0)">
+			<div ng-include="'templates/votacao/votacao.html'" />
+		</div>
+		<div ng-show="isSelected(1)">
+			<div ng-include="'templates/votacao/escolherRestaurante.html'"></div>
+		</div>
+		<div ng-show="isSelected(2)">
+			<div ng-include="'templates/votacao/votar.html'"></div>
+		</div>
+		<div ng-show="isSelected(3)">
+			<div ng-include="'templates/votacao/votarNovamente.html'"></div>
+		</div>
+		<div ng-show="isSelected(4)">
+			<div ng-include="'templates/votacao/concluir.html'"></div>
+		</div>
+	</div>
+	<!-- /.container -->
+</div>

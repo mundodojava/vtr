@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+    create table pessoa (
+        id bigint not null,
+        nome varchar(255) not null,
+        primary key (id)
+    )
+
+    create table ranking (
+        id bigint not null,
+        restaurante_id bigint not null,
+        usuario_id varchar(255) not null,
+        primary key (id)
+    )
+
+    create table ranking_votos (
+        ranking bigint not null,
+        votos bigint not null,
+        primary key (ranking, votos)
+    )
+
+    create table restaurante (
+        id bigint not null,
+        banner varchar(255) not null,
+        logo varchar(255) not null,
+        nome varchar(255) not null,
+        primary key (id)
+    )
+
+    create table usuario (
+        id varchar(255) not null,
+        pessoa_id bigint not null,
+        primary key (id)
+    )
+
+    create table voto (
+        id bigint not null,
+        nota integer not null,
+        tipo_voto integer not null,
+        primary key (id)
+    )
+
+ -->
+<dataset>
+	<restaurante id="1" nome="Subway" banner="subwaybanner.jpg" logo="subwaylogo.jpg" />
+	<restaurante id="2" nome="Mc Donald's" banner="mcdonaldsbanner.jpg" logo="mcdonaldslogo.jpg"  />
+	<restaurante id="3" nome="OutBack" banner="outbackbanner.jpg" logo="outbacklogo.jpg"  />
+	<restaurante id="4" nome="América" banner="americabanner.jpg" logo="americalogo.jpg" />
+	<restaurante id="5" nome="The Fifties" banner="thefiftiesbanner.jpg" logo="thefiftieslogo.jpg"  />
+</dataset>

@@ -1,0 +1,30 @@
+<div class="row"
+	style="margin-bottom: 20px; margin-left: 15px; margin-right: 20px;">
+	<img src="img/icon/cup.svg" style="float: left; margin-right: 20px;">
+	<h3 class="section-heading">Muito bem, agora conte-nos mais:</h3>
+</div>
+<div class="row">
+	<div class="col-lg-12">
+		<flash-messages></flash-messages>
+	</div>
+</div>
+<form ng-submit="continuar(restaurante)">
+	<div class="row">
+		<div class="text-center col-md-6 col-lg-6">
+			<img width="70%" ng-src="img/restaurante/{{restaurante.logo}}" /> <img width="70%"
+				ng-src="img/restaurante/{{restaurante.banner}}" />
+		</div>
+		<div class="col-md-6 col-lg-6" style="margin-top: 5%;">
+			<div class="row" ng-repeat="voto in votosTemp">
+				<div class="col-md-6 col-lg-4">
+					<strong>{{voto.descricao}}</strong>
+				</div>
+				<input-stars ng-model="voto.nota" max="5" required></input-stars>
+			</div>
+			<div class="row text-left"
+				style="margin-bottom: 20px; margin-left: 15px; margin-top: 25px;">
+				<button class="btn btn-primary btn-lg">Continuar</button>
+			</div>
+		</div>
+	</div>
+</form>

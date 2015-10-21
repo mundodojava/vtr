@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>br.com.javatar</groupId>
+	<artifactId>vote-no-restaurante</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<name>vote-no-restaurante</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		
+		
+		<spring-rest-exception-handler-version>1.1.1</spring-rest-exception-handler-version>
+		<javax.servlet-api-version>3.1.0</javax.servlet-api-version>
+		
+		
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-framework-bom</artifactId>
+				<type>pom</type>
+				<version>4.1.8.RELEASE</version>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<dependencies>
+
+
+
+	</dependencies>
+
+	<modules>
+		<module>vote-no-restaurante-model</module>
+		<module>vote-no-restaurante-persist</module>
+    <module>vote-no-restaurante-service</module>
+    <module>vote-no-restaurante-api</module>
+    <module>vote-no-restaurante-dto</module>
+    <module>vote-no-restaurante-ui</module>
+  </modules>
+
+
+	<build>
+
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<configuration>
+						<source>1.7</source>
+						<target>1.7</target>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+
+</project>

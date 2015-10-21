@@ -1,0 +1,14 @@
+{	
+		
+	"defaultMsg":"Please add error message for {0}",
+	"email":"Por favor insira um endereço de email válido",
+	"minlength":"Por favor insira no mínimo {0} caracteres",
+	"maxlength":"Você deve inserir no máximo {0} caracteres",
+	"min":"Por favor insira um número um valor mínimo de {0}",
+	"max":"Por favor insira um número um valor máximo de {0}",
+	"required":"Este campo é obrigatório",
+	"date":"Por favor insira uma data válida",
+	"pattern":"Por favor verifique se a informação inserida é compatível com o padrão {0}",
+	"number":"Por favor insira um número válido",
+	"url":"Por favor insira uma URL válida no formato http(s)://wwww.contmatic.com.br"
+}

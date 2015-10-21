@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog/1.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog/1.9
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.9.xsd">
+
+	<changeSet author="ismael.gomes" id="1.0.0" context="prod">
+
+		<sqlFile path="classpath:br/com/javatar/votenorestaurante/persist/db/changelog/sql/createtables.sql" />
+
+	</changeSet>
+
+	<changeSet author="ismaael.gomes" id="1.0.1" context="prod">
+
+		<sqlFile  path="classpath:br/com/javatar/votenorestaurante/persist/db/changelog/sql/restaurantes.sql" />
+
+	</changeSet>
+
+	<changeSet author="ismaael.gomes" id="1.0.2" context="prod">
+
+		<sqlFile  path="classpath:br/com/javatar/votenorestaurante/persist/db/changelog/sql/loaddata.sql" />
+
+	</changeSet>
+
+	<changeSet author="ismaael.gomes" id="1.0.3" context="prod">
+
+		<sqlFile  path="classpath:br/com/javatar/votenorestaurante/persist/db/changelog/sql/views.sql" />
+
+	</changeSet>
+
+</databaseChangeLog>

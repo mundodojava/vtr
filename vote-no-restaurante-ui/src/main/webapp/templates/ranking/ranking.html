@@ -1,0 +1,87 @@
+<div style="background: white;" ng-init="init()">
+	<div class="container">
+		<div class="slide-animate-container">
+			<div class="slide-animate">
+				<div class="text-left" style="margin-left: 15px; margin-top: 20px;">
+
+					<a href="#!/home" class="btn btn-primary btn-lg"><span
+						class="glyphicon glyphicon-arrow-left" aria-hidden="true">
+					</span>Voltar Para o Menu de Rankings</a>
+				</div>
+				<div class="row"
+					style="margin-bottom: 20px; margin-left: 15px; margin-right: 20px;">
+
+					<div class="wow fadeInDown text-center">
+						<img class="rotate" ng-src="{{ranking.model.img}}"
+							style="float: left; margin-right: 30px;">
+						<div class="text-left lead">
+							<h3 style="padding-top: 20px;">Ranking Por
+								{{ranking.model.titulo}}</h3>
+							{{ranking.model.frase}}
+						</div>
+					</div>
+
+				</div>
+				<div class="row">
+					<div class="col-lg-12">
+						<flash-messages></flash-messages>
+					</div>
+				</div>
+				<form novalidate="novalidate" ng-submit="rankingPorUsuario()">
+					<div class="row">
+						<div class="col-md-9 col-lg-6">
+							<div class="form-group">
+								<div class="input-group">
+									<span class="input-group-addon"><em
+										class="glyphicon glyphicon-envelope"></em></span> <input type="text"
+										class="form-control" autocomplete="off"
+										ng-pattern-err-type="email" email-valido required
+										maxlength="100" ng-minlength="3"
+										placeholder="Digite seu e-mail e clique em Ver Minha Opinião"
+										ng-model="usuario">
+								</div>
+							</div>
+						</div>
+						<div class="col-md-3 col-lg-6 text-center">
+							<button class="btn btn-info btn-lg">Ver Minha Opinião</button>
+						</div>
+					</div>
+				</form>
+				<div class="row">
+					<div class="col-md-6 col-lg-6 text-center">
+						<h3>A Opinião Geral</h3>
+						<div class="row" ng-repeat="ranking in ranking.rankingGeral">
+							<div class="text-center col-md-4 col-lg-4">
+								<img height="75px"
+									ng-src="img/restaurante/{{ranking.restaurante.logo}}" />
+							</div>
+							<div class="text-center col-md-6 col-lg-6"
+								style="padding-top: 20px;">
+								{{restaurantes[ranking.restauranteId]}}
+								<input-stars ng-model="ranking.media" max="5" readonly="true"></input-stars>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6 col-lg-6 text-center">
+						<h3>A Sua Opinião</h3>
+						<div class="row" ng-repeat="ranking in ranking.rankingUsuario">
+							<div class="text-center col-md-4 col-lg-4">
+								<img height="75px"
+									ng-src="img/restaurante/{{ranking.restaurante.logo}}" />
+							</div>
+							<div class="text-center col-md-6 col-lg-6"
+								style="padding-top: 20px;">
+								{{restaurantes[ranking.restauranteId]}}
+								<input-stars ng-model="ranking.media" max="5" readonly="true"></input-stars>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+<!-- /.container -->
+
+

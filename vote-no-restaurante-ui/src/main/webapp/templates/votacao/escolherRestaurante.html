@@ -1,0 +1,13 @@
+<div class="row" style="margin-bottom: 20px; margin-left: 15px;">
+	<img src="img/icon/cup.svg" style="float: left; margin-right: 20px;">
+	<h3 class="section-heading">Qual restaurante você gosta mais:</h3>
+</div>
+<div class="row">
+	<div class="text-center col-md-6 col-lg-6"
+		ng-repeat="restaurante in randoms">
+		<div style="cursor: pointer;" ng-click="escolherRestaurante(restaurante)"> <img width="70%" ng-src="img/restaurante/{{restaurante.logo}}" /> <img
+			width="70%" ng-src="img/restaurante/{{restaurante.banner}}" />
+		</div>
+	</div>
+</div>
+</div>
