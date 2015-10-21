@@ -18,16 +18,28 @@ import br.com.javatar.votenorestaurante.service.restaurante.RestauranteService;
 
 import com.google.common.collect.Lists;
 
+/**
+ * The Class RestauranteController.
+ * 
+ * @author ismael
+ */
 @RestController
 @RequestMapping(value = "restaurantes", produces = { MediaType.APPLICATION_JSON_VALUE })
 public class RestauranteController {
 
+    /** O(a)(s) restaurante service. */
     @Autowired
     private RestauranteService restauranteService;
 
+    /** O(a)(s) to restaurante dto function. */
     @Autowired
     private RestauranteToRestauranteDTOFunction toRestauranteDTOFunction;
 
+    /**
+     * Listar.
+     *
+     * @return O(a)(s) response entity
+     */
     @RequestMapping(method = RequestMethod.GET)
     @ResponseBody
     public ResponseEntity<List<RestauranteDTO>> listar() {

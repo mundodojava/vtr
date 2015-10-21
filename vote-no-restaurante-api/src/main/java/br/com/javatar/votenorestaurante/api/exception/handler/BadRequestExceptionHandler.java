@@ -10,6 +10,8 @@ import cz.jirutka.spring.exhandler.messages.ErrorMessage;
 
 /**
  * The Class BusinessExceptionHandler.
+ * 
+ * @author ismael
  *
  */
 public class BadRequestExceptionHandler extends ErrorMessageRestExceptionHandler<BadRequestException> {
