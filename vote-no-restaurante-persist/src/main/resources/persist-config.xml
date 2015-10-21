@@ -19,11 +19,11 @@
 
 	<bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">
 		<property name="poolName" value="springHikariCP" />
-		<property name="connectionTestQuery" value="SELECT 1" />
+		<property name="connectionTestQuery" value="SELECT 1 FROM INFORMATION_SCHEMA.SYSTEM_USERS" />
 		<property name="dataSourceClassName" value="org.hsqldb.jdbc.JDBCDataSource" />
 		<property name="dataSourceProperties">
 			<props>
-				<prop key="url">jdbc:hsqldb:file:~/db/vote-no-restaurante.sql</prop>
+				<prop key="url">jdbc:hsqldb:file:~/db/vote-no-restaurante.sql;hsqldb.lock_file=false</prop>
 				<prop key="user">sa</prop>
 				<prop key="password"></prop>
 			</props>

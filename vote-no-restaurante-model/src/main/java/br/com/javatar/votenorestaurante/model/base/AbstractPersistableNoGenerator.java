@@ -24,14 +24,11 @@ import javax.persistence.Transient;
 import org.springframework.data.domain.Persistable;
 
 /**
- * Abstract base class for entities. Allows parameterization of id type, chooses
- * auto-generation and implements {@link #equals(Object)} and
- * {@link #hashCode()} based on that id.
+ * Abstract base class for entities. Allows parameterization of id type, chooses auto-generation and implements {@link #equals(Object)} and {@link #hashCode()} based on that id.
  * 
  * @author Oliver Gierke
  * @author Thomas Darimont
- * @param <PK>
- *            the the of the entity
+ * @param <PK> the the of the entity
  */
 @MappedSuperclass
 public abstract class AbstractPersistableNoGenerator<PK extends Serializable> implements Persistable<PK> {
@@ -54,16 +51,14 @@ public abstract class AbstractPersistableNoGenerator<PK extends Serializable> im
     /**
      * Sets the id of the entity.
      * 
-     * @param id
-     *            the id to set
+     * @param id the id to set
      */
     public final void setId(final PK id) {
         this.id = id;
     }
 
     /**
-     * Must be {@link Transient} in order to ensure that no JPA provider
-     * complains because of a missing setter.
+     * Must be {@link Transient} in order to ensure that no JPA provider complains because of a missing setter.
      * 
      * @see DATAJPA-622
      * @see org.springframework.data.domain.Persistable#isNew()

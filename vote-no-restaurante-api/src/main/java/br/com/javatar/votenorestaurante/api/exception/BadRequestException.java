@@ -1,6 +1,5 @@
 package br.com.javatar.votenorestaurante.api.exception;
 
-
 /**
  * The Class BusinessException.
  *
@@ -8,6 +7,7 @@ package br.com.javatar.votenorestaurante.api.exception;
  */
 public class BadRequestException extends RuntimeException {
 
+    /** A Constante serialVersionUID. */
     private static final long serialVersionUID = 1L;
 
     /**

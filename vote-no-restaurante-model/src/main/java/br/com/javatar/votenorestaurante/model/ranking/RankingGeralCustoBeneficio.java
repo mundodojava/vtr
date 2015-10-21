@@ -1,29 +1,22 @@
 package br.com.javatar.votenorestaurante.model.ranking;
 
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 import br.com.javatar.votenorestaurante.model.base.AbstractPersistableNoGenerator;
-import br.com.javatar.votenorestaurante.model.pessoa.Usuario;
 import br.com.javatar.votenorestaurante.model.restaurante.Restaurante;
 
 /**
- * The Class RankingUsuario.
+ * The Class RankingCustoBeneficio.
  * 
  * @author ismael
  */
 @Entity
-public class RankingUsuario extends AbstractPersistableNoGenerator<String> implements ViewRanking {
+public class RankingGeralCustoBeneficio extends AbstractPersistableNoGenerator<String> implements ViewRanking {
 
     /** A Constante serialVersionUID. */
     private static final long serialVersionUID = 1L;
-
-    /** O(a)(s) tipo voto. */
-    @Enumerated(EnumType.STRING)
-    private TipoVoto tipoVoto;
 
     /** O(a)(s) media. */
     private Integer media;
@@ -33,11 +26,6 @@ public class RankingUsuario extends AbstractPersistableNoGenerator<String> imple
     @JoinColumn(columnDefinition = "restaurante_id", name = "restaurante_id")
     private Restaurante restaurante;
 
-    /** O(a)(s) usuario. */
-    @ManyToOne
-    @JoinColumn(columnDefinition = "usuario_id", name = "usuario_id")
-    private Usuario usuario;
-
     /*
      * (non-Javadoc)
      * 
@@ -45,7 +33,7 @@ public class RankingUsuario extends AbstractPersistableNoGenerator<String> imple
      */
     @Override
     public TipoVoto getTipoVoto() {
-        return tipoVoto;
+        return null;
     }
 
     /*
@@ -55,7 +43,7 @@ public class RankingUsuario extends AbstractPersistableNoGenerator<String> imple
      */
     @Override
     public void setTipoVoto(TipoVoto tipoVoto) {
-        this.tipoVoto = tipoVoto;
+        // Não implementar
     }
 
     /*
