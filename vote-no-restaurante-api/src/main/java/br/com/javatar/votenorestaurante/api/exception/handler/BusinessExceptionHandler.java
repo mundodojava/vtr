@@ -13,6 +13,8 @@ import cz.jirutka.spring.exhandler.messages.ValidationErrorMessage;
 
 /**
  * The Class BusinessExceptionHandler.
+ * 
+ * @author ismael
  *
  */
 public class BusinessExceptionHandler extends ErrorMessageRestExceptionHandler<BusinessException> {

@@ -11,14 +11,27 @@ import br.com.javatar.votenorestaurante.dto.ranking.VotoDTO;
 import br.com.javatar.votenorestaurante.model.ranking.TipoVoto;
 import br.com.javatar.votenorestaurante.model.ranking.Voto;
 
+/**
+ * The Class VotoAssembler.
+ * 
+ * @author ismael
+ */
 @Component
 public class VotoAssembler implements Serializable {
 
+    /** A Constante serialVersionUID. */
     private static final long serialVersionUID = 1L;
 
+    /** O(a)(s) restaurante assembler. */
     @Autowired
     private RestauranteAssembler restauranteAssembler;
 
+    /**
+     * To resource.
+     *
+     * @param entity O(a)(s) entity
+     * @return O(a)(s) voto dto
+     */
     public VotoDTO toResource(Voto entity) {
         if (entity == null) {
             return null;
@@ -30,6 +43,12 @@ public class VotoAssembler implements Serializable {
         return dto;
     }
 
+    /**
+     * To entity.
+     *
+     * @param dto O(a)(s) dto
+     * @return O(a)(s) voto
+     */
     public Voto toEntity(VotoDTO dto) {
         if (dto == null) {
             return null;

@@ -8,14 +8,27 @@ import org.springframework.stereotype.Component;
 import br.com.javatar.votenorestaurante.dto.pessoa.UsuarioDTO;
 import br.com.javatar.votenorestaurante.model.pessoa.Usuario;
 
+/**
+ * The Class UsuarioAssembler.
+ * 
+ * @author ismael
+ */
 @Component
 public class UsuarioAssembler implements Serializable {
 
+    /** A Constante serialVersionUID. */
     private static final long serialVersionUID = 1L;
 
+    /** O(a)(s) pessoa assembler. */
     @Autowired
     private PessoaAssembler pessoaAssembler;
 
+    /**
+     * To resource.
+     *
+     * @param entity O(a)(s) entity
+     * @return O(a)(s) usuario dto
+     */
     public UsuarioDTO toResource(Usuario entity) {
         if (entity == null) {
             return null;
@@ -26,6 +39,12 @@ public class UsuarioAssembler implements Serializable {
         return dto;
     }
 
+    /**
+     * To entity.
+     *
+     * @param dto O(a)(s) dto
+     * @return O(a)(s) usuario
+     */
     public Usuario toEntity(UsuarioDTO dto) {
         if (dto == null) {
             return null;

@@ -12,6 +12,7 @@ import cz.jirutka.spring.exhandler.messages.ErrorMessage;
 /**
  * The Class BusinessExceptionHandler.
  *
+ * @author ismael
  */
 public class EmptyResultDataAccessExceptionHandler extends ErrorMessageRestExceptionHandler<EmptyResultDataAccessException> {
 

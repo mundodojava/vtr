@@ -10,37 +10,57 @@ import org.springframework.hateoas.ResourceSupport;
 
 import br.com.javatar.votenorestaurante.dto.pessoa.UsuarioDTO;
 
+/**
+ * The Class RankingDTO.
+ * 
+ * @author ismael
+ */
 public class RankingDTO extends ResourceSupport implements Serializable {
 
+    /** A Constante serialVersionUID. */
     private static final long serialVersionUID = 1L;
 
+    /** O(a)(s) ranking id. */
     private Long rankingId;
 
+    /** O(a)(s) usuario. */
     private UsuarioDTO usuario;
 
+    /** O(a)(s) votos. */
     private List<VotoDTO> votos;
 
     /**
-     * @return the usuario
+     * Obtém o valor do(a)(s) usuario.
+     *
+     * @return O(a)(s) usuario
      */
     public UsuarioDTO getUsuario() {
         return usuario;
     }
 
     /**
-     * @param usuario the usuario to set
+     * Define o valor do(a)(s) usuario.
+     *
+     * @param usuario o novo valor do(a)(s) usuario
      */
     public void setUsuario(UsuarioDTO usuario) {
         this.usuario = usuario;
     }
 
     /**
-     * @param votos the votos to set
+     * Define o valor do(a)(s) votos.
+     *
+     * @param votos o novo valor do(a)(s) votos
      */
     public void setVotos(List<VotoDTO> votos) {
         this.votos = votos;
     }
 
+    /**
+     * Obtém o valor do(a)(s) votos.
+     *
+     * @return O(a)(s) votos
+     */
     public List<VotoDTO> getVotos() {
         if (votos == null) {
             this.votos = new ArrayList<>();
@@ -49,19 +69,26 @@ public class RankingDTO extends ResourceSupport implements Serializable {
     }
 
     /**
-     * @return the rankingId
+     * Obtém o valor do(a)(s) ranking id.
+     *
+     * @return O(a)(s) ranking id
      */
     public Long getRankingId() {
         return rankingId;
     }
 
     /**
-     * @param rankingId the rankingId to set
+     * Define o valor do(a)(s) ranking id.
+     *
+     * @param rankingId o novo valor do(a)(s) ranking id
      */
     public void setRankingId(Long rankingId) {
         this.rankingId = rankingId;
     }
 
+    /* (non-Javadoc)
+     * @see org.springframework.hateoas.ResourceSupport#toString()
+     */
     @Override
     public String toString() {
         return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
