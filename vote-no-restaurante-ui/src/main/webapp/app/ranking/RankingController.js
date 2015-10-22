@@ -70,11 +70,15 @@ define([ 'app', 'messages', 'RankingService', 'RestauranteService' ], function(a
         }
 
         $scope.rankingPorUsuario = function() {
-
+            flash.clean();
+            flash.cleanup();
             if ($scope.usuario !== undefined) {
                 if ($scope.ranking.model.tipo !== undefined) {
                     RankingService.rankingPorTipoEUsuario($scope.ranking.model.tipo, $scope.usuario, function(response) {
                         $scope.ranking.rankingUsuario = response.clone();
+                        if($scope.ranking.rankingUsuario.length === 0){
+                            flash.warn("Não foram encontradas votações para o e-mail informado");
+                        }
                     });
                 }
             }
