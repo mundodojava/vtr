@@ -18,8 +18,8 @@ define([ 'app', 'messages', 'VotacaoService', 'RestauranteService' ], function(a
         },
 
         {
-            "tipo" : "DEMORA",
-            "descricao" : "Demora"
+            "tipo" : "RAPIDEZ",
+            "descricao" : "Rapidez"
         },
 
         {
@@ -44,7 +44,7 @@ define([ 'app', 'messages', 'VotacaoService', 'RestauranteService' ], function(a
         scroll = function(){
             $("html, body").animate({
                 scrollTop : parseInt($("#vote").offset().top)
-            }, 300);
+            }, 500);
         }
 
         $scope.init = function() {

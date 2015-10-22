@@ -15,7 +15,7 @@ define(modules, function(bootbox, jquery, angularAMD, app, run, messages) {
         window.down = function() {
             $("html, body").animate({
                 scrollTop : parseInt($("#vote").offset().top)
-            }, 1500);
+            }, 1000);
         }
         
     });

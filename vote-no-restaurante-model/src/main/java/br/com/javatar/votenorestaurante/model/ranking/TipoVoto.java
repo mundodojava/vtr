@@ -10,8 +10,8 @@ public enum TipoVoto {
     /** O(a)(s) atendimento. */
     ATENDIMENTO,
 
-    /** O(a)(s) demora. */
-    DEMORA,
+    /** O(a)(s) rapidez. */
+    RAPIDEZ,
 
     /** O(a)(s) sabor. */
     SABOR,

@@ -5,10 +5,10 @@ define([ 'app', 'messages', 'RankingService', 'RestauranteService' ], function(a
         $scope.ranking = {};
         $scope.rankingDescricao = {
 
-            "demora" : {
+            "rapidez" : {
                 "img" : "img/icon/watch.svg",
                 "titulo" : "Tempo",
-                "frase" : "Porque você está com pressa e seu tempo é valioso."
+                "frase" : "Porque seu tempo é valioso."
             },
             "atendimento" : {
                 "img" : "img/icon/chair.svg",
@@ -54,7 +54,7 @@ define([ 'app', 'messages', 'RankingService', 'RestauranteService' ], function(a
 
             $("html, body").animate({
                 scrollTop : parseInt($("#vote").offset().top)
-            }, 300);
+            }, 500);
 
             $scope.rankingGeral();
         }
