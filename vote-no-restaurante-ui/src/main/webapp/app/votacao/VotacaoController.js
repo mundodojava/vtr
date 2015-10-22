@@ -108,7 +108,7 @@ define([ 'app', 'messages', 'VotacaoService', 'RestauranteService' ], function(a
             VotacaoService.salvarRanking(montarRequestRanking(), function() {
                 $rootScope.usuario = $scope.usuario.usuarioId;
                 flash.success("Obrigado, agora sinta-se à vontade para navegar pelo site");
-                $location.path('/home');
+                $location.path('/ranking/custobeneficio');
             });
         };
 
