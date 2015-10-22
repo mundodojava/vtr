@@ -56,7 +56,8 @@ public class RankingService {
     /**
      * Salvar.
      *
-     * @param ranking O(a)(s) ranking
+     * @param ranking
+     *            O(a)(s) ranking
      */
     @Transactional(propagation = Propagation.REQUIRED, rollbackFor = Exception.class)
     public void salvar(Ranking ranking) {
@@ -69,7 +70,8 @@ public class RankingService {
     /**
      * Merge restaurante.
      *
-     * @param ranking O(a)(s) ranking
+     * @param ranking
+     *            O(a)(s) ranking
      */
     public void mergeRestaurante(Ranking ranking) {
         Preconditions.checkNotNull(ranking, "ranking nulo");
@@ -92,14 +94,17 @@ public class RankingService {
     /**
      * Validar ranking.
      *
-     * @param ranking O(a)(s) ranking
+     * @param ranking
+     *            O(a)(s) ranking
      */
     public void validarRanking(Ranking ranking) {
         Map<String, String> map = new HashMap<String, String>();
-        if (ranking.getUsuario().isNew()) {
-            map.put("usuarioId", messageSource.getMessage("email_obrigatorio", null, new Locale("pt_BR")));
-        } else if (usuarioService.exists(ranking.getUsuario().getId()) && ranking.getUsuario().getPessoa() != null) {
-            map.put("usuarioId", messageSource.getMessage("pessoa_existente", new Object[] { ranking.getUsuario().getPessoa().getNome() }, new Locale("pt_BR")));
+        if (ranking.getUsuario() != null) {
+            if (ranking.getUsuario().isNew()) {
+                map.put("usuarioId", messageSource.getMessage("email_obrigatorio", null, new Locale("pt_BR")));
+            } else if (usuarioService.exists(ranking.getUsuario().getId()) && ranking.getUsuario().getPessoa() != null) {
+                map.put("usuarioId", messageSource.getMessage("pessoa_existente", new Object[] { ranking.getUsuario().getPessoa().getNome() }, new Locale("pt_BR")));
+            }
         }
         validarRestauranteVoto(ranking.getVotos(), map);
         checkViolations(map, validate(ranking));
@@ -108,8 +113,10 @@ public class RankingService {
     /**
      * Validar restaurante voto.
      *
-     * @param votos O(a)(s) votos
-     * @param map O(a)(s) map
+     * @param votos
+     *            O(a)(s) votos
+     * @param map
+     *            O(a)(s) map
      */
     public void validarRestauranteVoto(Set<Voto> votos, Map<String, String> map) {
         for (Voto voto : votos) {
@@ -122,7 +129,8 @@ public class RankingService {
     /**
      * Validar votacao por restaurante.
      *
-     * @param votos O(a)(s) votos
+     * @param votos
+     *            O(a)(s) votos
      */
     public void validarVotacaoPorRestaurante(Set<Voto> votos) {
         Map<String, String> map = new HashMap<>();
@@ -133,7 +141,7 @@ public class RankingService {
         }
 
         for (Entry<Restaurante, Collection<TipoVoto>> entry : votosPorRestaurante.asMap().entrySet()) {
-            if (entry.getValue().size() != TipoVoto.values().length) {
+            if (entry.getValue().size() < TipoVoto.values().length) {
                 map.put("tipoVoto", messageSource.getMessage("voto_faltando", new Object[] { entry.getKey().getNome() }, new Locale("pt_BR")));
             }
         }
