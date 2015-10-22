@@ -1,16 +1,15 @@
 define([ 'app', 'RankingService' ], function(app) {
 
-	app.register.service('VotacaoService', [ 'RankingService',
-			function(RankingService) {
+    app.register.service('VotacaoService', [ 'RankingService', function(RankingService) {
 
-				var _salvarRanking = function(body, responseFunction) {
-					RankingService.salvarRanking(body, responseFunction);
-				};
+        var _salvarRanking = function(body, responseFunction) {
+            RankingService.salvarRanking(body, responseFunction);
+        };
 
-				return {
-					salvarRanking : _salvarRanking,
-				};
+        return {
+            salvarRanking : _salvarRanking,
+        };
 
-	} ]);
+    } ]);
 
 });

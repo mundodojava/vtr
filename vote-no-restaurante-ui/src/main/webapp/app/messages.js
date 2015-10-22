@@ -1,5 +1,7 @@
 define([ 'app' ], function(app) {
-    app.directive('flashMessages', [ 'flash', function(flash) {
+    app.directive('flashMessages', [
+            'flash',
+            function(flash) {
                 var directive = {
                     restrict : 'EA',
                     replace : true,
@@ -9,10 +11,9 @@ define([ 'app' ], function(app) {
                         };
                     }
                 };
-                directive.template = '<div ng-show="messages.length > 0" class="alert {{messages[0].level}}" id="flash-container" >'
-                        + '<a class="close" aria-hidden="true" id="flash-close" ng-click="clean()">&times;</a>'
-                        + '<div ng-repeat="m in messages" id="flash-messages">' + '<div>' + '<span class="">{{m.text}}</span>' + '</div>' + '</div>'
-                        + '</div>';
+                directive.template = '<div ng-show="messages.length > 0" class="alert {{messages[0].level}}" id="flash-container" >' 
+                        + '<a class="close" aria-hidden="true" id="flash-close" ng-click="clean()">&times;</a>' + '<div ng-repeat="m in messages" id="flash-messages">'
+                        + '<div>' + '<span class="">{{m.text}}</span>' + '</div>' + '</div>' + '</div>';
 
                 directive.controller = [ '$scope', '$rootScope', function($scope, $rootScope) {
                     $rootScope.$on('flash:message', function(_, messages, done) {
@@ -22,6 +23,7 @@ define([ 'app' ], function(app) {
                 } ];
                 return directive;
             } ]);
+
     app.service('flash', [ '$rootScope', '$timeout', function($rootScope, $timeout) {
         var messages = [];
         var reset;
@@ -74,9 +76,8 @@ define([ 'app' ], function(app) {
         var _info = function(msg, preEmit) {
             _emit(messages = asArrayOfMessages('alert-info', msg), preEmit);
         };
-
         var _success = function(msg, preEmit) {
-            _emit(messages = asArrayOfMessages('alert-primary', msg), preEmit);
+            _emit(messages = asArrayOfMessages('alert-success', msg), preEmit);
         };
         var _warn = function(msg, preEmit) {
             _emit(messages = asArrayOfMessages('alert-warning', msg), preEmit);

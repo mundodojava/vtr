@@ -1,137 +1,132 @@
 define(function() {
 
-	return {
-		'bootstrap' : {
-			deps : [ 'jquery' ]
-		},
+    return {
+        'bootstrap' : {
+            deps : [ 'jquery' ]
+        },
 
-		'owlcarousel' : {
-			deps : [ 'jquery' ]
-		},
-		
-		'uiMorphingButton_inflow' : {
-			exports : 'UIMorphingButton',
-			deps : [ 'jquery' , 'classie' ]
-		},
+        'owlcarousel' : {
+            deps : [ 'jquery' ]
+        },
 
-		'stickUp' : {
-			exports : 'stickUp',
-			deps : [ 'jquery' ]
-		},
+        'uiMorphingButton_inflow' : {
+            exports : 'UIMorphingButton',
+            deps : [ 'jquery', 'classie' ]
+        },
 
-		'magnific-popup' : {
-			deps : [ 'jquery' ]
-		},
+        'stickUp' : {
+            exports : 'stickUp',
+            deps : [ 'jquery' ]
+        },
 
-		'flot' : {
-			deps : [ 'jquery' ]
-		},
+        'magnific-popup' : {
+            deps : [ 'jquery' ]
+        },
 
-		'intro' : {
-			deps : [ 'jquery' ]
-		},
+        'flot' : {
+            deps : [ 'jquery' ]
+        },
 
-		'popupoverlay' : {
-			deps : [ 'jquery' ]
-		},
+        'intro' : {
+            deps : [ 'jquery' ]
+        },
 
-		'cookie' : {
-			deps : [ 'jquery' ]
-		},
+        'popupoverlay' : {
+            deps : [ 'jquery' ]
+        },
 
-		'bootbox' : {
-			exports : 'bootbox',
-			deps : [ 'jquery' ]
-		},
+        'cookie' : {
+            deps : [ 'jquery' ]
+        },
 
-		'angular' : {
-			exports : 'angular',
-			deps : [ 'jquery' ]
-		},
+        'bootbox' : {
+            exports : 'bootbox',
+            deps : [ 'jquery' ]
+        },
 
-		'ng-modal' : {
-			exports : 'angularModalService',
-			deps : [ 'angular' ]
-		},
+        'angular' : {
+            exports : 'angular',
+            deps : [ 'jquery' ]
+        },
 
-		'angular-input-stars' : {
-			deps : [ 'angular' ]
-		},
-		
-		'angular-underscore' : {
-			deps : [ 'underscore', 'angular' ]
-		},
+        'ng-modal' : {
+            exports : 'angularModalService',
+            deps : [ 'angular' ]
+        },
 
-		'angular-scroll' : {
-			exports : 'duScroll',
-			deps : [ 'angular' ]
-		},
+        'angular-input-stars' : {
+            deps : [ 'angular' ]
+        },
 
-		'ngTable' : {
-			deps : [ 'angular' ]
-		},
+        'angular-underscore' : {
+            deps : [ 'underscore', 'angular' ]
+        },
 
-		'angular-bootbox' : {
-			deps : [ 'angular' ]
-		},
+        'angular-scroll' : {
+            exports : 'duScroll',
+            deps : [ 'angular' ]
+        },
 
-		'restangular' : {
-			deps : [ 'angular' ]
-		},
+        'ngTable' : {
+            deps : [ 'angular' ]
+        },
 
-		'angular-cookies' : {
-			exports : 'ngCookies',
-			deps : [ 'angular' ]
-		},
+        'angular-bootbox' : {
+            deps : [ 'angular' ]
+        },
 
-		'angular-route' : {
-			exports : 'ngRoute',
-			deps : [ 'angular' ]
-		},
+        'restangular' : {
+            deps : [ 'angular' ]
+        },
 
-		'jcs-auto-validate' : {
-			exports : 'jcs-autoValidate',
-			deps : [ 'angular' ]
-		},
+        'angular-cookies' : {
+            exports : 'ngCookies',
+            deps : [ 'angular' ]
+        },
 
-		'angular-animate' : {
-			exports : 'ngAnimate',
-			deps : [ 'angular' ]
-		},
+        'angular-route' : {
+            exports : 'ngRoute',
+            deps : [ 'angular' ]
+        },
 
-		'angular-input-match' : {
-			deps : [ 'angular' ]
-		},
+        'jcs-auto-validate' : {
+            exports : 'jcs-autoValidate',
+            deps : [ 'angular' ]
+        },
 
-		'app' : {
-			deps : [ 'angular-route', 'angular-animate',
-					'jcs-auto-validate', 'ngTable', 'angular-bootbox',
-					'cookie', 'popupoverlay', 'bootstrap','ng-modal' ,
-					'angular-input-match', 'angular-underscore', 'angular-input-stars',
-					'angular-cookies', 'bootbox', 'restangular' ]
-		},
+        'angular-animate' : {
+            exports : 'ngAnimate',
+            deps : [ 'angular' ]
+        },
 
-		'routes' : {
-			deps : [ 'app' ]
-		},
+        'angular-input-match' : {
+            deps : [ 'angular' ]
+        },
 
-		'config' : {
-			deps : [ 'routes' ]
-		},
+        'app' : {
+            deps : [ 'angular-route', 'angular-animate', 'jcs-auto-validate', 'ngTable', 'angular-bootbox', 'cookie', 'popupoverlay', 'bootstrap', 'ng-modal', 'angular-input-match', 'angular-underscore', 'angular-input-stars', 'angular-cookies', 'bootbox', 'restangular' ]
+        },
 
-		'run' : {
-			deps : [ 'config' ]
-		},
+        'routes' : {
+            deps : [ 'app' ]
+        },
 
-		'messages' : {
-			deps : [ 'config']
-		},
-	
-		'PrincipalController'  : {
-			deps : [ 'run']
-		},
-		
+        'config' : {
+            deps : [ 'routes' ]
+        },
 
-	};
+        'run' : {
+            deps : [ 'config' ]
+        },
+
+        'messages' : {
+            deps : [ 'config' ]
+        },
+
+        'PrincipalController' : {
+            deps : [ 'run' ]
+        },
+
+    };
 
 });

@@ -3,11 +3,12 @@ define([ 'app' ], function(app) {
     app.config([ 'RestangularProvider', function(RestangularProvider) {
         RestangularProvider.setBaseUrl('/vote-no-restaurante-api');
 
-
         RestangularProvider.setMethodOverriders([ "put", "patch" ]);
 
-        RestangularProvider.setDefaultHeaders({'Content-Type': "application/json"});
-        
+        RestangularProvider.setDefaultHeaders({
+            'Content-Type' : "application/json"
+        });
+
         // In this case we are mapping the id of each element to the _id field.
         // We also change the Restangular route.
         // The default value for parentResource remains the same.
@@ -19,14 +20,14 @@ define([ 'app' ], function(app) {
 
         // Use Request interceptor
         RestangularProvider.setRequestInterceptor(function(element) {
-           // delete element.name;
+            // delete element.name;
             return element;
         });
 
         // ..or use the full request interceptor, setRequestInterceptor's more
         // powerful brother!
         RestangularProvider.setFullRequestInterceptor(function(element, operation, route, url, headers, params, httpConfig) {
-            //delete element.name;
+            // delete element.name;
             return {
                 element : element,
                 params : params,
@@ -186,9 +187,11 @@ define([ 'app' ], function(app) {
     app.directive('ngEnter', function() {
         return function(scope, element, attrs) {
             element.bind("keydown keypress", function(event) {
-                if(event.which === 13) {
-                    scope.$apply(function(){
-                        scope.$eval(attrs.ngEnter, {'event': event});
+                if (event.which === 13) {
+                    scope.$apply(function() {
+                        scope.$eval(attrs.ngEnter, {
+                            'event' : event
+                        });
                     });
 
                     event.preventDefault();
@@ -196,7 +199,6 @@ define([ 'app' ], function(app) {
             });
         };
     });
-
 
     app.filter('capitalize', function() {
         return function(input) {

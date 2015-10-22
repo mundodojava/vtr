@@ -2,22 +2,33 @@
 	<div class="container">
 		<div class="slide-animate-container">
 			<div class="slide-animate">
-				<div class="text-left" style="margin-left: 15px; margin-top: 20px;">
-
-					<a href="#!/home" class="btn btn-primary btn-lg"><span
-						class="glyphicon glyphicon-arrow-left" aria-hidden="true">
-					</span>Voltar Para o Menu de Rankings</a>
+				<div class="row" style="margin-top: 20px; margin-bottom: 30px;">
+					<div class="col-lg-6 col-md-6 text-left">
+						<a href="#!/home" class="btn btn-primary btn-lg"><span
+							class="glyphicon glyphicon-home" aria-hidden="true">
+						</span>Página Inicial</a>
+					</div>
 				</div>
-				<div class="row"
-					style="margin-bottom: 20px; margin-left: 15px; margin-right: 20px;">
-
-					<div class="wow fadeInDown text-center">
+				<div class="row" style="margin-bottom: 20px;">
+					<div class="col-lg-6 col-md-6 wow fadeInDown text-center">
 						<img class="rotate" ng-src="{{ranking.model.img}}"
-							style="float: left; margin-right: 30px;">
+							style="float: left; margin-right: 30px; margin-top: 20px;">
 						<div class="text-left lead">
-							<h3 style="padding-top: 20px;">Ranking Por
+							<h3 style=""margin-top: -10px;">Ranking Por
 								{{ranking.model.titulo}}</h3>
 							{{ranking.model.frase}}
+						</div>
+					</div>
+
+					<div class="col-lg-4 col-md-4 text-right" style="margin-top: 15px;">
+						<div class="form-group">
+							<h4 style="float: left;">Selecione um Tipo de Ranking</h4>
+							<select ng-model="ranking.model.tipo"
+								disable-valid-styling="true" disable-invalid-styling="true"
+								ng-change="trocarTipo()" class="form-control">
+								<option ng-repeat="(key, value) in rankingDescricao"
+									value="{{key}}" ng-selected="{{key == ranking.model.tipo}}">{{value.titulo}}</option>
+							</select>
 						</div>
 					</div>
 
@@ -29,21 +40,24 @@
 				</div>
 				<form novalidate="novalidate" ng-submit="rankingPorUsuario()">
 					<div class="row">
-						<div class="col-md-9 col-lg-6">
+						<div class="col-md-10 col-lg-10">
 							<div class="form-group">
 								<div class="input-group">
 									<span class="input-group-addon"><em
 										class="glyphicon glyphicon-envelope"></em></span> <input type="text"
 										class="form-control" autocomplete="off"
 										ng-pattern-err-type="email" email-valido required
-										maxlength="100" ng-minlength="3"
+										maxlength="100" ng-minlength="3" disable-valid-styling="true"
 										placeholder="Digite seu e-mail e clique em Ver Minha Opinião"
-										ng-model="usuario">
+										ng-model="usuario"> <span class="input-group-btn">
+										<button class="btn btn-info btn-lg">
+											<em class="glyphicon glyphicon-search"></em> Ver Minha
+											Opinião
+										</button>
+									</span>
 								</div>
 							</div>
-						</div>
-						<div class="col-md-3 col-lg-6 text-center">
-							<button class="btn btn-info btn-lg">Ver Minha Opinião</button>
+
 						</div>
 					</div>
 				</form>

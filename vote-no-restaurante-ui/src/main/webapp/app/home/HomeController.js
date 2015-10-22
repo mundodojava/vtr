@@ -1,7 +1,7 @@
-define([ 'app'], function(app) {
-	
-	app.register.controller('HomeController', ['$scope', function ($scope) {
-		
-	}]);
-	
+define([ 'app', 'messages' ], function(app) {
+
+    app.register.controller('HomeController', [ '$scope', 'flash', function($scope, flash) {
+
+    } ]);
+
 });

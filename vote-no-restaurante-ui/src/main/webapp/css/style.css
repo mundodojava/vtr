@@ -1159,23 +1159,21 @@ label {
   color: #b2bcc5;
 }
 .form-control {
-  border: 2px solid #bdc3c7;
+  border: 2px solid #3498db;
   color: #34495e;
   font-family: "Lato", Helvetica, Arial, sans-serif;
   font-size: 15px;
   line-height: 1.467;
   padding: 8px 12px;
   height: 42px;
-  -webkit-appearance: none;
   border-radius: 6px;
-  -webkit-box-shadow: none;
   box-shadow: none;
   -webkit-transition: border .25s linear, color .25s linear, background-color .25s linear;
   transition: border .25s linear, color .25s linear, background-color .25s linear;
 }
 .form-group.focus .form-control,
 .form-control:focus {
-  border-color: #1abc9c;
+  border-color: #3498db;
   outline: 0;
   -webkit-box-shadow: none;
   box-shadow: none;
@@ -1521,8 +1519,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   font-size: 15px;
   color: #ffffff;
   text-align: center;
-  background-color: #bdc3c7;
-  border: 1px solid #bdc3c7;
+  background-color: #3498db;
+  border: 1px solid #3498db;
   border-radius: 6px;
   -webkit-transition: border .25s linear, color .25s linear, background-color .25s linear;
   transition: border .25s linear, color .25s linear, background-color .25s linear;
@@ -1625,10 +1623,10 @@ fieldset[disabled] .input-group.focus .input-group-btn .btn-default.active {
   border-color: #1abc9c;
 }
 .input-group-btn .btn {
-  background-color: #ffffff;
-  border: 2px solid #bdc3c7;
-  color: #bdc3c7;
-  line-height: 18px;
+  background-color: #3498db;
+  border: 2px solid #3498db;
+  color: #ffffff;
+  line-height: 17px;
 }
 .input-group-btn .btn-default {
   color: #ffffff;
