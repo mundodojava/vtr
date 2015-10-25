@@ -10,7 +10,7 @@
         http://www.springframework.org/schema/context/spring-context.xsd">
 
 	<import resource="classpath*:*service-config.xml" />
-	
+
 	<import resource="bundle-config.xml" />
 	<import resource="exception-handler-config.xml" />
 
@@ -19,8 +19,11 @@
 	<context:component-scan base-package="br.com.javatar.votenorestaurante.api.assembler" />
 	<context:component-scan base-package="br.com.javatar.votenorestaurante.api.controller" />
 
+	<mvc:resources mapping="swagger-ui.html" location="classpath:/META-INF/resources/" />
+	<mvc:resources mapping="/webjars/**" location="classpath:/META-INF/resources/webjars/" />
+
 	<!-- http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#format-configuring-formatting-mvc -->
-	<mvc:annotation-driven>
+	<mvc:annotation-driven enable-matrix-variables="true">
 		<mvc:message-converters>
 			<bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
 				<property name="objectMapper" ref="customJacksonMapper" />
