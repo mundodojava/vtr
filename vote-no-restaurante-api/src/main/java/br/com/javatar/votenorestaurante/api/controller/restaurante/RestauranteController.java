@@ -1,5 +1,8 @@
 package br.com.javatar.votenorestaurante.api.controller.restaurante;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +26,7 @@ import com.google.common.collect.Lists;
  * 
  * @author ismael
  */
+@Api(value="Restaurante")
 @RestController
 @RequestMapping(value = "restaurantes", produces = { MediaType.APPLICATION_JSON_VALUE })
 public class RestauranteController {
@@ -40,6 +44,7 @@ public class RestauranteController {
      *
      * @return O(a)(s) response entity
      */
+    @ApiOperation(value = "Listar Restaurantes")
     @RequestMapping(method = RequestMethod.GET)
     @ResponseBody
     public ResponseEntity<List<RestauranteDTO>> listar() {

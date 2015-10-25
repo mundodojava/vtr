@@ -1,5 +1,7 @@
 package br.com.javatar.votenorestaurante.api.controller.ranking;
 
+import io.swagger.annotations.Api;
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,10 +21,10 @@ import br.com.javatar.votenorestaurante.api.assembler.ranking.ViewRankingToViewR
 import br.com.javatar.votenorestaurante.api.exception.BadRequestException;
 import br.com.javatar.votenorestaurante.dto.ranking.RankingDTO;
 import br.com.javatar.votenorestaurante.dto.ranking.ViewRankingDTO;
-import br.com.javatar.votenorestaurante.model.ranking.RankingGeralCustoBeneficio;
-import br.com.javatar.votenorestaurante.model.ranking.RankingUsuarioCustoBeneficio;
 import br.com.javatar.votenorestaurante.model.ranking.RankingGeral;
+import br.com.javatar.votenorestaurante.model.ranking.RankingGeralCustoBeneficio;
 import br.com.javatar.votenorestaurante.model.ranking.RankingUsuario;
+import br.com.javatar.votenorestaurante.model.ranking.RankingUsuarioCustoBeneficio;
 import br.com.javatar.votenorestaurante.model.ranking.TipoVoto;
 import br.com.javatar.votenorestaurante.service.ranking.RankingService;
 import br.com.javatar.votenorestaurante.service.ranking.ViewRankingService;
@@ -34,6 +36,7 @@ import com.google.common.collect.Lists;
  * 
  * @author ismael
  */
+@Api(value="Ranking")
 @RestController
 @RequestMapping(value = "/rankings")
 public class RankingController {

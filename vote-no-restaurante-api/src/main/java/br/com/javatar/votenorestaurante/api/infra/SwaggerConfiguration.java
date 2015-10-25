@@ -24,7 +24,7 @@ public class SwaggerConfiguration {
     }
 
     private ApiInfo apiInfo() {
-        ApiInfo apiInfo = new ApiInfo("Vote no Restaurante", null, "1.0", null, null, null, null);
+        ApiInfo apiInfo = new ApiInfo("Vote no Restaurante", "Vote no Melhor Restaurante", "1.0", null, null, null, null);
         return apiInfo;
     }
 }
