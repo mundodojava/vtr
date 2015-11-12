@@ -1,0 +1,30 @@
+{
+  "name": "vote-no-restaurante",
+  "version": "0.1.0",
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-contrib-jshint": "~0.10.0",
+    "grunt-contrib-nodeunit": "~0.4.1",
+    "grunt-contrib-uglify": "~0.5.0",
+    "grunt-karma": "~0.12.0",
+    "karma" : "~0.13",
+    "karma-jasmine": "~0.2.0",
+    "karma-chrome-launcher": "~0.2",
+    "karma-phantomjs-launcher": "~0.1"
+  },
+  "description": "Projeto para votação popular sobre o melhor restaurante",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mundodojava/vote-no-restaurante.git"
+  },
+  "author": "Ismael Costa",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mundodojava/vote-no-restaurante/issues"
+  },
+  "homepage": "https://github.com/mundodojava/vote-no-restaurante"
+}
