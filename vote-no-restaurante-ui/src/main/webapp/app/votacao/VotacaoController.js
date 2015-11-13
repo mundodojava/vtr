@@ -1,4 +1,4 @@
-define([ 'app', 'messages', 'VotacaoService', 'RestauranteService' ], function(app) {
+define([ 'app', 'init', 'VotacaoService', 'RestauranteService' ], function(app) {
 
     app.register.controller('VotacaoController', [ '$scope', '$rootScope', 'flash', 'VotacaoService', '$location', 'RestauranteService', function($scope, $rootScope, flash, VotacaoService, $location, RestauranteService) {
 

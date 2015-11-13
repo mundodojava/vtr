@@ -1,4 +1,4 @@
-define([ 'app', 'RankingHttpFacade' ], function(app) {
+define([ 'app','init', 'RankingHttpFacade' ], function(app) {
 
     app.register.service('RankingService', [ 'RankingHttpFacade', function(RankingHttpFacade) {
 

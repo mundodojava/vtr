@@ -201,5 +201,5 @@ requirejs.config({
     callback: window.__karma__.start
 });
 
-require([ 'app' ], function() {
-})
+require([ 'init' ], function() {
+});

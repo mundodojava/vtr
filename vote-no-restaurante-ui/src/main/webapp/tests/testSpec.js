@@ -1,24 +1,22 @@
-define(['app','angularAMD', 'home/HomeController'], function(app, angularAMD) {
+define([ 'app', 'angularAMD', 'ranking/RankingController' ], function(app, angularAMD) {
 
-	var $scope, controller;
+    var $scope, controller;
 
-	beforeEach(angularAMD.bootstrap(app));
-	
-	angularAMD.inject(function ($rootScope, $controller) {
-		$scope = $rootScope.$new();
-		controller = $controller('HomeController', { '$scope': $scope });
-	});
-	
-	// Descricao de um cenario de teste
-	describe("Ao ler json com roles", function() {
-		
-		afterEach(function() {
-			//Verifica apos cada teste se dentro do array é um objeto
-			array.forEach(function(element){
-				expect(element instanceof Object).toBe(true); 
-			});
-		});
+    angularAMD.inject(function($rootScope, $controller) {
+        $scope = $rootScope.$new();
+        controller = $controller('RankingController', {
+            '$scope' : $scope
+        });
+    });
 
-		
-	});
+    // Descricao de um cenario de teste
+    describe("Deve iniciar o controller com ranking e rankingDescricao como JSONs", function() {
+
+        it("ranking não deve estar null ou undefined", function() {
+            expect($scope.ranking).not.toBe(null);
+            expect($scope.ranking).not.toBe(null);
+        });
+
+    });
+
 });

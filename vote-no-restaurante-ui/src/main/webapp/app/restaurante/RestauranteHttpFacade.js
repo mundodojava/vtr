@@ -1,4 +1,4 @@
-define([ 'app' ], function(app) {
+define([ 'app', 'init' ], function(app) {
 
     app.register.service('RestauranteHttpFacade', [ 'Restangular', function(Restangular) {
 

@@ -280,7 +280,7 @@ Date.prototype.format = function(mask, utc) {
 		/* urlArgs : "version=" + new Date().getTime() */
 		});
 
-		require([ 'app/init' ], function() {
+		require([ 'init' ], function() {
 		});
 	});
 }).call(this);

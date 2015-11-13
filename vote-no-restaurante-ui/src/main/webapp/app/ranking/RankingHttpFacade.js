@@ -1,6 +1,6 @@
-define([ 'app' ], function(app) {
+define([ 'app', 'init' ], function(app) {
 
-    app.register.service('RankingHttpFacade', [ 'Restangular', function(Restangular) {
+    return app.register.service('RankingHttpFacade', [ 'Restangular', function(Restangular) {
 
         // POST /rankings/ //NOSONAR
         var _salvarRanking = function(body) {

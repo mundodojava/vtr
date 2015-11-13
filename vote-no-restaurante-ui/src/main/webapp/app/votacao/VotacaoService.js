@@ -1,4 +1,4 @@
-define([ 'app', 'RankingService' ], function(app) {
+define([ 'app', 'init', 'RankingService' ], function(app) {
 
     app.register.service('VotacaoService', [ 'RankingService', function(RankingService) {
 
