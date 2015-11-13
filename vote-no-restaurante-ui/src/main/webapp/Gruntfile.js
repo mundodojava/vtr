@@ -3,6 +3,7 @@ module.exports = function(grunt) {
     // Project configuration.
     grunt.initConfig({
         pkg : grunt.file.readJSON('package.json'),
+        
         uglify : {
             options : {
                 banner : '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
@@ -16,10 +17,13 @@ module.exports = function(grunt) {
         karma : {
             unit : {
                 options : {
-                    frameworks : [ 'jasmine' ],
+					// frameworks to use
+					// available frameworks: https://npmjs.org/browse/keyword/karma-adapter
+					frameworks: ['jasmine-jquery','jasmine', 'requirejs'],
                     singleRun : false,
-                    browsers : [ 'PhantomJS' ],
-                    files : [ 'app/**/*.js', 'js/angular-mocks.js', 'tests/*.js' ]
+                    browsers : [ 'Chrome' ],
+                    files : [ 'js/angular.min.js', 'js/require.js', 'main.js',
+					          'js/angular-mocks.js', 'tests/*.js' ]
                 }
             }
         }
@@ -29,6 +33,7 @@ module.exports = function(grunt) {
     // Load the plugin that provides the "uglify" task.
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-karma');
+    grunt.loadNpmTasks('requirejs');
 
     // Default task(s).
     grunt.registerTask('default', [ 'uglify' ]);
