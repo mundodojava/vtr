@@ -1,0 +1,698 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app\config.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">app/</a> config.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">23.17% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>19/82</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/28</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">5.71% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>2/35</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">23.17% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>19/82</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">define([ 'app' ], function(app) {
+&nbsp;
+    app.config([ 'RestangularProvider', function(RestangularProvider) {
+        RestangularProvider.setBaseUrl('/vote-no-restaurante-api');
+&nbsp;
+        RestangularProvider.setMethodOverriders([ "put", "patch" ]);
+&nbsp;
+        RestangularProvider.setDefaultHeaders({
+            'Content-Type' : "application/json"
+        });
+&nbsp;
+        // In this case we are mapping the id of each element to the _id field.
+        // We also change the Restangular route.
+        // The default value for parentResource remains the same.
+        RestangularProvider.setRestangularFields({
+            id : "_id",
+            route : "restangularRoute",
+            selfLink : "self.href"
+        });
+&nbsp;
+        // Use Request interceptor
+        RestangularProvider.setRequestInterceptor(<span class="fstat-no" title="function not covered" >function(element) {</span>
+            // delete element.name;
+<span class="cstat-no" title="statement not covered" >            return element;</span>
+        });
+&nbsp;
+        // ..or use the full request interceptor, setRequestInterceptor's more
+        // powerful brother!
+        RestangularProvider.setFullRequestInterceptor(<span class="fstat-no" title="function not covered" >function(element, operation, route, url, headers, params, httpConfig) {</span>
+            // delete element.name;
+<span class="cstat-no" title="statement not covered" >            return {</span>
+                element : element,
+                params : params,
+                headers : headers,
+                httpConfig : httpConfig
+            };
+        });
+&nbsp;
+        // add a response intereceptor
+        RestangularProvider.addResponseInterceptor(<span class="fstat-no" title="function not covered" >function(data) {</span>
+<span class="cstat-no" title="statement not covered" >            return data;</span>
+        });
+&nbsp;
+    } ]);
+&nbsp;
+    // Restangular service that uses setFullResponse
+    app.factory('RestFulResponse', [ 'Restangular', <span class="fstat-no" title="function not covered" >function(Restangular) {</span>
+<span class="cstat-no" title="statement not covered" >        return Restangular.withConfig(<span class="fstat-no" title="function not covered" >function(RestangularConfigurer) {</span></span>
+<span class="cstat-no" title="statement not covered" >            RestangularConfigurer.setFullResponse(true);</span>
+        });
+    } ]);
+&nbsp;
+    app.directive('includeReplace', <span class="fstat-no" title="function not covered" >function() {</span>
+<span class="cstat-no" title="statement not covered" >        return {</span>
+            require : 'ngInclude',
+            restrict : 'A', /* optional */
+            link : <span class="fstat-no" title="function not covered" >function(scope, el) {</span>
+<span class="cstat-no" title="statement not covered" >                el.replaceWith(el.children());</span>
+            }
+        };
+    });
+&nbsp;
+    app.directive('removeSpace', <span class="fstat-no" title="function not covered" >function() {</span>
+<span class="cstat-no" title="statement not covered" >        return {</span>
+            require : '?ngModel',
+            link : <span class="fstat-no" title="function not covered" >function(scope, element, attrs, ngModelCtrl) {</span>
+<span class="cstat-no" title="statement not covered" >                if (!ngModelCtrl) {</span>
+<span class="cstat-no" title="statement not covered" >                    return;</span>
+                }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                element.bind('keypress', <span class="fstat-no" title="function not covered" >function(event) {</span></span>
+<span class="cstat-no" title="statement not covered" >                    if (event.keyCode === 32) {</span>
+<span class="cstat-no" title="statement not covered" >                        event.preventDefault();</span>
+                    }
+                });
+            }
+        };
+    });
+&nbsp;
+    app.directive('emailValido', <span class="fstat-no" title="function not covered" >function() {</span>
+<span class="cstat-no" title="statement not covered" >                return {</span>
+                    require : '?ngModel',
+                    link : <span class="fstat-no" title="function not covered" >function(scope, element, attrs, ngModelCtrl) {</span>
+<span class="cstat-no" title="statement not covered" >                        if (!ngModelCtrl) {</span>
+<span class="cstat-no" title="statement not covered" >                            return;</span>
+                        }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                        ngModelCtrl.$parsers</span>
+                                .push(<span class="fstat-no" title="function not covered" >function(val) {</span>
+<span class="cstat-no" title="statement not covered" >                                    if (angular.isUndefined(val)) {</span>
+<span class="cstat-no" title="statement not covered" >                                        val = '';</span>
+                                    }
+<span class="cstat-no" title="statement not covered" >                                    if (!/([a-z0-9_-]([a-z0-9-_\.]*[a-z0-9-_])*)@([a-z0-9\.-]*[a-z0-9]\.(arpa|root|aero|biz|cat|com|coop|edu|gov|info|int|jobs|mil|mobi|museum|name|net|org|pro|tel|travel|ac|ad|ae|af|ag|ai|al|am|an|ao|aq|ar|as|at|au|aw|ax|az|ba|bb|bd|be|bf|bg|bh|bi|bj|bm|bn|bo|br|bs|bt|bv|bw|by|bz|ca|cc|cd|cf|cg|ch|ci|ck|cl|cm|cn|co|cr|cu|cv|cx|cy|cz|de|dj|dk|dm|do|dz|ec|ee|eg|er|es|et|eu|fi|fj|fk|fm|fo|fr|ga|gb|gd|ge|gf|gg|gh|gi|gl|gm|gn|gp|gq|gr|gs|gt|gu|gw|gy|hk|hm|hn|hr|ht|hu|id|ie|il|im|in|io|iq|ir|is|it|je|jm|jo|jp|ke|kg|kh|ki|km|kn|kr|kw|ky|kz|la|lb|lc|li|lk|lr|ls|lt|lu|lv|ly|ma|mc|md|mg|mh|mk|ml|mm|mn|mo|mp|mq|mr|ms|mt|mu|mv|mw|mx|my|mz|na|nc|ne|nf|ng|ni|nl|no|np|nr|nu|nz|om|pa|pe|pf|pg|ph|pk|pl|pm|pn|pr|ps|pt|pw|py|qa|re|ro|ru|rw|sa|sb|sc|sd|se|sg|sh|si|sj|sk|sl|sm|sn|so|sr|st|su|sv|sy|sz|tc|td|tf|tg|th|tj|tk|tl|tm|tn|to|tp|tr|tt|tv|tw|tz|ua|ug|uk|um|us|uy|uz|va|vc|ve|vg|vi|vn|vu|wf|ws|ye|yt|yu|za|zm|zw)|([0-9]{1,3}\.{3}[0-9]{1,3}))/</span>
+                                            .test(val)) {
+<span class="cstat-no" title="statement not covered" >                                        ngModelCtrl.$setValidity('email', false);</span>
+<span class="cstat-no" title="statement not covered" >                                        angular.element(element[0]).focus();</span>
+                                    } else {
+<span class="cstat-no" title="statement not covered" >                                        ngModelCtrl.$setValidity('email', true);</span>
+                                    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                                    return val;</span>
+                                });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                        element.bind('keypress', <span class="fstat-no" title="function not covered" >function(event) {</span></span>
+<span class="cstat-no" title="statement not covered" >                            if (event.keyCode === 32) {</span>
+<span class="cstat-no" title="statement not covered" >                                event.preventDefault();</span>
+                            }
+                        });
+                    }
+                };
+            });
+&nbsp;
+    /** *********** DIRETIVA PARA FOCUS *********** */
+    app.directive('focusMe', [ '$timeout', <span class="fstat-no" title="function not covered" >function() {</span>
+<span class="cstat-no" title="statement not covered" >        return {</span>
+            link : <span class="fstat-no" title="function not covered" >function(scope, element, attrs) {</span>
+<span class="cstat-no" title="statement not covered" >                scope.$watch(attrs.focusMe, <span class="fstat-no" title="function not covered" >function(value) {</span></span>
+<span class="cstat-no" title="statement not covered" >                    if (value) {</span>
+<span class="cstat-no" title="statement not covered" >                        element[0].focus();</span>
+<span class="cstat-no" title="statement not covered" >                        scope[attrs.focusMe] = false;</span>
+                    }
+                });
+            }
+        };
+    } ]);
+&nbsp;
+    app.directive('jqueryMask', <span class="fstat-no" title="function not covered" >function() {</span>
+<span class="cstat-no" title="statement not covered" >        return {</span>
+            require : '?ngModel',
+            restrict : 'AC',
+            link : <span class="fstat-no" title="function not covered" >function(scope, element, attrs, ngModelCtrl) {</span>
+<span class="cstat-no" title="statement not covered" >                $(element).mask(attrs.jqueryMask, {</span>
+                    optional : !attrs.jqueryMaskOptional ? false : true,
+                    placeholder : attrs.jqueryMaskPlaceholder !== undefined ? attrs.jqueryMaskPlaceholder : "_"
+                });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                if (!ngModelCtrl) {</span>
+<span class="cstat-no" title="statement not covered" >                    return;</span>
+                }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                ngModelCtrl.$parsers.unshift(<span class="fstat-no" title="function not covered" >function(val) {</span></span>
+<span class="cstat-no" title="statement not covered" >                    if (attrs.jqueryMaskValidFunction !== undefined) {</span>
+<span class="cstat-no" title="statement not covered" >                        if (!window[attrs.jqueryMaskValidFunction](val, element[0])) {</span>
+<span class="cstat-no" title="statement not covered" >                            ngModelCtrl.$setValidity('invalidDate', false);</span>
+<span class="cstat-no" title="statement not covered" >                            angular.element(element[0]).focus();</span>
+<span class="cstat-no" title="statement not covered" >                            return '';</span>
+                        } else {
+<span class="cstat-no" title="statement not covered" >                            ngModelCtrl.$setValidity('invalidDate', true);</span>
+                        }
+                    }
+<span class="cstat-no" title="statement not covered" >                    return val;</span>
+                });
+            }
+        };
+    });
+&nbsp;
+    app.directive('autoFocus', [ '$timeout', <span class="fstat-no" title="function not covered" >function($timeout) {</span>
+<span class="cstat-no" title="statement not covered" >        return {</span>
+            restrict : 'AC',
+            link : <span class="fstat-no" title="function not covered" >function(_scope, _element) {</span>
+<span class="cstat-no" title="statement not covered" >                $timeout(<span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >                    _element[0].focus();</span>
+                }, 0);
+            }
+        };
+    } ]);
+&nbsp;
+    app.directive('compareTo', <span class="fstat-no" title="function not covered" >function() {</span>
+<span class="cstat-no" title="statement not covered" >        return {</span>
+            require : "ngModel",
+            scope : {
+                otherModelValue : "=compareTo"
+            },
+            link : <span class="fstat-no" title="function not covered" >function(scope, element, attributes, ngModel) {</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                ngModel.$validators.compareTo = <span class="fstat-no" title="function not covered" >function(modelValue) {</span></span>
+<span class="cstat-no" title="statement not covered" >                    return modelValue === scope.otherModelValue;</span>
+                };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                scope.$watch("otherModelValue", <span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >                    ngModel.$validate();</span>
+                });
+            }
+        };
+    });
+&nbsp;
+    app.directive('ngEnter', <span class="fstat-no" title="function not covered" >function() {</span>
+<span class="cstat-no" title="statement not covered" >        return <span class="fstat-no" title="function not covered" >function(scope, element, attrs) {</span></span>
+<span class="cstat-no" title="statement not covered" >            element.bind("keydown keypress", <span class="fstat-no" title="function not covered" >function(event) {</span></span>
+<span class="cstat-no" title="statement not covered" >                if (event.which === 13) {</span>
+<span class="cstat-no" title="statement not covered" >                    scope.$apply(<span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >                        scope.$eval(attrs.ngEnter, {</span>
+                            'event' : event
+                        });
+                    });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                    event.preventDefault();</span>
+                }
+            });
+        };
+    });
+&nbsp;
+    app.filter('capitalize', <span class="fstat-no" title="function not covered" >function() {</span>
+<span class="cstat-no" title="statement not covered" >        return <span class="fstat-no" title="function not covered" >function(input) {</span></span>
+<span class="cstat-no" title="statement not covered" >            if (input != null) {</span>
+<span class="cstat-no" title="statement not covered" >                input = input.toLowerCase();</span>
+<span class="cstat-no" title="statement not covered" >                return input.substring(0, 1).toUpperCase() + input.substring(1);</span>
+            }
+<span class="cstat-no" title="statement not covered" >            return input;</span>
+        };
+    });
+});</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue Nov 17 2015 14:56:00 GMT-0200 (Horário brasileiro de verão)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

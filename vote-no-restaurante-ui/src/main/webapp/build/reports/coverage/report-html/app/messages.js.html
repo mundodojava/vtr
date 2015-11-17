@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app\messages.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">app/</a> messages.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">36.96% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>17/46</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/10</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">10.53% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>2/19</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">36.96% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>17/46</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">define([ 'app' ], function(app) {
+    app.directive('flashMessages', [
+            'flash',
+<span class="fstat-no" title="function not covered" >            function(flash) {</span>
+<span class="cstat-no" title="statement not covered" >                var directive = {</span>
+                    restrict : 'EA',
+                    replace : true,
+                    link : <span class="fstat-no" title="function not covered" >function(scope) {</span>
+<span class="cstat-no" title="statement not covered" >                        scope.clean = <span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >                            flash.flash([]);</span>
+                        };
+                    }
+                };
+<span class="cstat-no" title="statement not covered" >                directive.template = '&lt;div ng-show="messages.length &gt; 0" class="alert {{messages[0].level}}" id="flash-container" &gt;' </span>
+                        + '&lt;a class="close" aria-hidden="true" id="flash-close" ng-click="clean()"&gt;&amp;times;&lt;/a&gt;' + '&lt;div ng-repeat="m in messages" id="flash-messages"&gt;'
+                        + '&lt;div&gt;' + '&lt;span class=""&gt;{{m.text}}&lt;/span&gt;' + '&lt;/div&gt;' + '&lt;/div&gt;' + '&lt;/div&gt;';
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                directive.controller = [ '$scope', '$rootScope', <span class="fstat-no" title="function not covered" >function($scope, $rootScope) {</span></span>
+<span class="cstat-no" title="statement not covered" >                    $rootScope.$on('flash:message', <span class="fstat-no" title="function not covered" >function(_, messages, done) {</span></span>
+<span class="cstat-no" title="statement not covered" >                        $rootScope.messages = messages;</span>
+<span class="cstat-no" title="statement not covered" >                        done();</span>
+                    });
+                } ];
+<span class="cstat-no" title="statement not covered" >                return directive;</span>
+            } ]);
+&nbsp;
+    app.service('flash', [ '$rootScope', '$timeout', function($rootScope, $timeout) {
+        var messages = [];
+        var reset;
+        var _clean = <span class="fstat-no" title="function not covered" >function() {</span>
+<span class="cstat-no" title="statement not covered" >            _emit(messages = asArrayOfMessages([]));</span>
+        };
+&nbsp;
+        var _cleanup = <span class="fstat-no" title="function not covered" >function() {</span>
+<span class="cstat-no" title="statement not covered" >            $timeout.cancel(reset);</span>
+<span class="cstat-no" title="statement not covered" >            reset = $timeout(<span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >                $rootScope.messages = [];</span>
+            }, 7000);
+        };
+&nbsp;
+        var _emit = <span class="fstat-no" title="function not covered" >function(messages, preEmit) {</span>
+<span class="cstat-no" title="statement not covered" >            if (preEmit !== undefined) {</span>
+<span class="cstat-no" title="statement not covered" >                preEmit();</span>
+            }
+<span class="cstat-no" title="statement not covered" >            $rootScope.$emit('flash:message', messages, _cleanup);</span>
+        };
+&nbsp;
+        // limpa as mensagens qdo muda a rota
+        $rootScope.$on('$routeChangeSuccess', _cleanup);
+&nbsp;
+        var asMessage = <span class="fstat-no" title="function not covered" >function(level, text) {</span>
+<span class="cstat-no" title="statement not covered" >            if (!text) {</span>
+<span class="cstat-no" title="statement not covered" >                text = level;</span>
+<span class="cstat-no" title="statement not covered" >                level = 'success';</span>
+            }
+<span class="cstat-no" title="statement not covered" >            return {</span>
+                level : level,
+                text : text
+            };
+        };
+        var asArrayOfMessages = <span class="fstat-no" title="function not covered" >function(level, text) {</span>
+<span class="cstat-no" title="statement not covered" >            if (level instanceof Array)</span>
+<span class="cstat-no" title="statement not covered" >                return level.map(<span class="fstat-no" title="function not covered" >function(message) {</span></span>
+<span class="cstat-no" title="statement not covered" >                    return message.text ? message : asMessage(message);</span>
+                });
+<span class="cstat-no" title="statement not covered" >            return text ? [ {</span>
+                level : level,
+                text : text
+            } ] : [ asMessage(level) ];
+        };
+&nbsp;
+        var _flash = <span class="fstat-no" title="function not covered" >function(level, text, preEmit) {</span>
+<span class="cstat-no" title="statement not covered" >            _emit(messages = asArrayOfMessages(level, text), preEmit);</span>
+        };
+&nbsp;
+        var _info = <span class="fstat-no" title="function not covered" >function(msg, preEmit) {</span>
+<span class="cstat-no" title="statement not covered" >            _emit(messages = asArrayOfMessages('alert-info', msg), preEmit);</span>
+        };
+        var _success = <span class="fstat-no" title="function not covered" >function(msg, preEmit) {</span>
+<span class="cstat-no" title="statement not covered" >            _emit(messages = asArrayOfMessages('alert-success', msg), preEmit);</span>
+        };
+        var _warn = <span class="fstat-no" title="function not covered" >function(msg, preEmit) {</span>
+<span class="cstat-no" title="statement not covered" >            _emit(messages = asArrayOfMessages('alert-warning', msg), preEmit);</span>
+        };
+        var _error = <span class="fstat-no" title="function not covered" >function(msg, preEmit) {</span>
+<span class="cstat-no" title="statement not covered" >            _emit(messages = asArrayOfMessages('alert-danger', msg), preEmit);</span>
+        };
+        return {
+            flash : _flash,
+            cleanup : _cleanup,
+            clean : _clean,
+            info : _info,
+            success : _success,
+            warn : _warn,
+            error : _error
+        };
+    } ]);
+});</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue Nov 17 2015 14:56:00 GMT-0200 (Horário brasileiro de verão)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>
