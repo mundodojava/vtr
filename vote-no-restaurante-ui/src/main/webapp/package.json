@@ -15,7 +15,8 @@
     "karma-opera-launcher": "^0.3.0",
     "karma-phantomjs-launcher": "~0.1",
     "karma-jasmine-jquery": "~0.1",
-    "karma-requirejs": "~0.2"
+    "karma-requirejs": "~0.2",
+    "karma-coverage": "latest"
   },
   "description": "Projeto para votação popular sobre o melhor restaurante",
   "main": "main.js",
