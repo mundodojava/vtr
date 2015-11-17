@@ -39,11 +39,11 @@
 	</dependencies>
 
 	<modules>
-		<module>vote-no-restaurante-model</module>
-		<module>vote-no-restaurante-persist</module>
+	<module>vote-no-restaurante-model</module>
+	<module>vote-no-restaurante-persist</module>
     <module>vote-no-restaurante-service</module>
-    <module>vote-no-restaurante-api</module>
     <module>vote-no-restaurante-dto</module>
+    <module>vote-no-restaurante-api</module>
     <module>vote-no-restaurante-ui</module>
   </modules>
 
