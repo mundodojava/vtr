@@ -16,7 +16,8 @@
     "karma-phantomjs-launcher": "~0.1",
     "karma-jasmine-jquery": "~0.1",
     "karma-requirejs": "~0.2",
-    "karma-coverage": "latest"
+    "karma-coverage": "latest",
+    "istanbul": "latest"
   },
   "description": "Projeto para votação popular sobre o melhor restaurante",
   "main": "main.js",
