@@ -1,6 +1,6 @@
-define([ 'app', 'init', 'RankingService', 'RestauranteService' ], function(app) {
+﻿define([ 'app', 'init', 'RankingService', 'RestauranteService' ], function(app) {
 
-    return app.register.controller('RankingController', [ '$scope', '$rootScope', 'flash', '$routeParams', 'RankingService', 'RestauranteService', function($scope, $rootScope, flash, $routeParams, RankingService, RestauranteService) {
+    app.register.controller('RankingController', [ '$scope', '$rootScope', 'flash', '$routeParams', 'RankingService', 'RestauranteService', function($scope, $rootScope, flash, $routeParams, RankingService, RestauranteService) {
 
         $scope.ranking = {};
         $scope.rankingDescricao = {

@@ -1,6 +1,6 @@
-define([ 'app', 'messages' ], function(app) {
+define([ 'app', 'init' ], function(app) {
 
-    return app.controller('HomeController', [ '$scope', 'flash', function($scope, flash) {
+    app.register.controller('HomeController', [ '$scope', 'flash', function($scope, flash) {
 
     } ]);
 
