@@ -1,34 +1,41 @@
-module.exports = function(grunt) {
+module.exports = function (grunt) {
 
-    // Project configuration.
-    grunt.initConfig({
-        pkg : grunt.file.readJSON('package.json'),
-        
-        uglify : {
-            options : {
-                banner : '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
-            },
-            build : {
-                src : 'src/<%= pkg.name %>.js',
-                dest : 'build/<%= pkg.name %>.min.js'
-            }
-        },
+	// Project configuration.
+	grunt.initConfig({
+		pkg : grunt.file.readJSON('package.json'),
 
-        karma : {
-            unit: {
-                configFile: 'karma.conf.js'
-            }
-        }
+		uglify : {
+			options : {
+				banner : '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
+			},
+			build : {
+				src : 'src/<%= pkg.name %>.js',
+				dest : 'build/<%= pkg.name %>.min.js'
+			}
+		},
 
-    });
+		karma : {
+			unit : {
+				configFile : 'karma.conf.js',
+				autoWatch: true
+			},
+			continuous : {
+				configFile: "karma.conf.js",
+				singleRun : 'true',
+				browsers : ['PhantomJS']
+			},
+		}
 
-    // Load the plugin that provides the "uglify" task.
-    grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.loadNpmTasks('grunt-karma');
+	});
 
-    // Default task(s).
-    grunt.registerTask('default', [ 'uglify' ]);
+	// Load the plugin that provides the "uglify" task.
+	grunt.loadNpmTasks('grunt-contrib-uglify');
+	grunt.loadNpmTasks('grunt-karma');
+	grunt.loadNpmTasks('grunt-karma-sonar');
 
-    grunt.registerTask('test', [ 'karma' ]);
-    
+	// Default task(s).
+	grunt.registerTask('default', ['uglify']);
+
+	grunt.registerTask('test', ['karma', 'karma_sonar']);
+
 };
