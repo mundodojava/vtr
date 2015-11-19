@@ -15,6 +15,7 @@ requirejs.config({
         'angular-route' : '../js/angular-route.min',
         'angular-underscore' : '../js/angular-underscore.min',
         'angular-animate' : '../js/angular-animate.min',
+        'angular-mocks' : '../js/angular-mocks',
         'angular-cookies' : '../js/angular-cookies.min',
         'angular-bootbox' : '../js/angular-bootbox.min',
         'angular-scroll' : '../js/angular-scroll.min',
@@ -167,9 +168,13 @@ requirejs.config({
         'angular-input-match' : {
             deps : [ 'angular' ]
         },
+		
+		'angular-mocks' : {
+            deps : [ 'angular' ]
+        },
 
         'app' : {
-            deps : [ 'angular-route', 'angular-animate', 'jcs-auto-validate', 'ngTable', 'angular-bootbox', 'cookie', 'popupoverlay', 'bootstrap', 'ng-modal', 'angular-input-match', 'angular-underscore', 'angular-input-stars', 'angular-cookies', 'bootbox', 'restangular' ]
+            deps : [ 'angular-mocks', 'angular-route', 'angular-animate', 'jcs-auto-validate', 'ngTable', 'angular-bootbox', 'cookie', 'popupoverlay', 'bootstrap', 'ng-modal', 'angular-input-match', 'angular-underscore', 'angular-input-stars', 'angular-cookies', 'bootbox', 'restangular' ]
         },
 
         'routes' : {

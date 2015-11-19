@@ -21,8 +21,8 @@ module.exports = function (grunt) {
 			},
 			continuous : {
 				configFile: "karma.conf.js",
-				singleRun : 'true',
-				browsers : ['PhantomJS']
+				singleRun : false,
+				browsers : ['Chrome']
 			},
 		}
 
@@ -36,6 +36,6 @@ module.exports = function (grunt) {
 	// Default task(s).
 	grunt.registerTask('default', ['uglify']);
 
-	grunt.registerTask('test', ['karma', 'karma_sonar']);
+	grunt.registerTask('test', ['karma']);
 
 };

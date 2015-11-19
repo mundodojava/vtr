@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
-<coverage lines-valid="256"  lines-covered="105"  line-rate="0.4102"  branches-valid="62"  branches-covered="0"  branch-rate="0"  timestamp="1447779360908" complexity="0" version="0.1">
+<coverage lines-valid="256"  lines-covered="105"  line-rate="0.4102"  branches-valid="62"  branches-covered="0"  branch-rate="0"  timestamp="1447864385041" complexity="0" version="0.1">
 <sources>
 	<source>C:\Projetos\git\vote-no-restaurante\vote-no-restaurante-ui\src\main\webapp</source>
 </sources>
